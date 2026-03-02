@@ -47,30 +47,75 @@ We are in a hardening phase and need reviewer feedback across methods, UX, KG qu
 
 Use maintainer-provided MCP endpoint and token. Do not commit credentials.
 
-1. Set your token locally:
+1. Export token locally:
 
 ```bash
-export BRAIN_RESEARCHER_MCP_TOKEN="<your_token>"
+export BR_MCP_TOKEN="<your_token>"
 ```
 
-2. Add a server named `brain_researcher_mcp` in your IDE MCP config (template):
+2. Use one of the client setups below.
+
+### Codex CLI
+
+Option A: local stdio server
+
+```bash
+codex mcp add brain-researcher -- brain-researcher-mcp
+```
+
+Option B: edit `~/.codex/mcp.json` and add:
 
 ```json
 {
   "mcpServers": {
-    "brain_researcher_mcp": {
+    "brain-researcher-http": {
+      "type": "http",
       "url": "<MCP_ENDPOINT>",
       "headers": {
-        "Authorization": "Bearer ${BRAIN_RESEARCHER_MCP_TOKEN}"
+        "Authorization": "Bearer ${BR_MCP_TOKEN}",
+        "Accept": "application/json, text/event-stream"
       }
     }
   }
 }
 ```
 
-3. Reload your IDE MCP connectors.
-4. Run a smoke test prompt, for example:
-`use brain_researcher_mcp to search tools for resting-state connectivity`.
+### Cursor
+
+Open Cursor MCP settings and add an HTTP server named `brain-researcher-http` with:
+
+```json
+{
+  "mcpServers": {
+    "brain-researcher-http": {
+      "url": "<MCP_ENDPOINT>",
+      "headers": {
+        "Authorization": "Bearer ${BR_MCP_TOKEN}",
+        "Accept": "application/json, text/event-stream"
+      }
+    }
+  }
+}
+```
+
+### Claude Code
+
+Register directly with CLI:
+
+```bash
+claude mcp add-json brain-researcher-http "{
+  \"type\":\"http\",
+  \"url\":\"<MCP_ENDPOINT>\",
+  \"headers\":{
+    \"Authorization\":\"Bearer ${BR_MCP_TOKEN}\",
+    \"Accept\":\"application/json, text/event-stream\"
+  }
+}"
+```
+
+3. Reload MCP connectors in your client.
+4. Smoke test prompt:
+`use brain-researcher-http MCP to search tools for resting-state connectivity`.
 
 ## 5-Minute Contributor Quickstart
 
