@@ -112,7 +112,5 @@ body:
     attributes:
       label: Safety checks
       options:
-        - label: I did not click Save governance.
-          required: true
         - label: I did not include PHI, secrets, or private credentials.
           required: true
