@@ -13,7 +13,7 @@ Brain Researcher aims to make neuroimaging analysis:
 
 ## Scope of This Public Repo
 
-This repository is the public collaboration hub for:
+This repository is the public review hub for:
 
 - Review workflows and issue templates.
 - Benchmark task assets and migration artifacts.
@@ -43,7 +43,6 @@ Use each document for one purpose:
 ## Universal Rules
 
 1. Use read-only review behavior by default.
-2. Do not click `Save governance` in Benchmark unless you are an authorized maintainer.
 3. Avoid long or expensive runs unless needed for the report.
 4. Do not submit PHI, secrets, private credentials, or unauthorized data.
 
@@ -149,7 +148,6 @@ Top nav -> `Advanced` -> `Tools` and top nav -> `Library`.
 1. Select dataset (for example NeuroimageCodeBench).
 2. Search task by ID or keyword.
 3. Open task detail and inspect Scope, Goal, Input Requirements, Required Outputs, Pass Criteria, Expected Results.
-4. Do not click `Save governance`.
 - Review standards:
 1. Scope and Goal are aligned.
 2. Required Outputs are specific and testable.

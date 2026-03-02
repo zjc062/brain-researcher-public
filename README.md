@@ -6,16 +6,31 @@ Brain Researcher is an open neuroimaging assistant for researchers and developer
 
 Instead of relying on free-form code generation, Brain Researcher uses schema-constrained planning and a curated tool catalog to reduce execution errors and improve reproducibility.
 
+## Why This Repo Exists
+
+The product is live at [brain-researcher.com](https://brain-researcher.com).  
+This repository is the public review hub where we organize human scientific and technical review.
+
+Right now we are specifically looking for contributors to review:
+
+- Benchmark task rigor and pass criteria.
+- Workflow defaults and node ordering.
+- NeuroKG definitions/edges and multihop reasoning quality.
+- Hypothesis quality (novelty/factual accuracy/bias).
+- MCP and Studio reliability issues.
+
+If you are not sure where to start, use the `Contributor Quickstart` and pick one review track below.
+
 ## What It Does
 
 - Helps users plan analyses in plain language.
-- Turns plans into explicit workflow node chains (DAG-style pipelines).
+- Turns plans into explicit workflow node chains.
 - Tracks parameters, tool versions, and run artifacts for review.
 - Supports both Web UI workflows and IDE-based MCP workflows.
 
 ## How It Works (High Level)
 
-1. Grounding with NeuroKG: uses a knowledge graph to structure concepts (tasks, regions, diseases, methods) and improve planning quality.
+1. Grounding with NeuroKG: uses a domain specific knowledge graph to structure concepts (tasks, regions, diseases, methods) and improve planning quality.
 2. Schema-constrained workflow planning: selects from validated tools and checks input/output compatibility before execution.
 3. Execution via MCP bridge: exposes the same backend in Codex/Cursor/Claude Code through contract-aware tool invocation.
 
@@ -79,7 +94,7 @@ If credits block execution tests, top up in `Settings` at `https://brain-researc
 
 ## Review Tracks
 
-Suggested priority entry points:
+Example entry points:
 
 - MCP runtime/privacy: [#2](https://github.com/zjc062/brain-researcher-public/issues/2), [#5](https://github.com/zjc062/brain-researcher-public/issues/5)
 - Studio validation/guardrails: [#6](https://github.com/zjc062/brain-researcher-public/issues/6), [#7](https://github.com/zjc062/brain-researcher-public/issues/7), [#8](https://github.com/zjc062/brain-researcher-public/issues/8), [#9](https://github.com/zjc062/brain-researcher-public/issues/9)
@@ -103,7 +118,7 @@ Suggested priority entry points:
 
 ## MCP Setup (Quick)
 
-Use the maintainer-provided endpoint and token. Never commit credentials.
+Use token from `https://brain-researcher.com/settings`. Never commit credentials.
 
 1. Export token:
 

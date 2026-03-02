@@ -62,14 +62,6 @@ Use this pattern:
 - Actual: `Data validated` shows passed, but run fails due to missing mount/readiness.
 - Suggested fix: include dataset readiness signal in verify check and error copy.
 
-## Known Duplicate/Alias Cases
-
-When you see multiple tool names for similar functionality, report as a `tool` issue.
-
-| Observed names | What it means | File as |
-| --- | --- | --- |
-| `run_fmriprep` and `fmriprep_preprocessing` | Different exposed implementations/wrappers for fMRIPrep paths | Tool issue (`area/tool`) |
-
 ## Review Tracks
 
 ### 1) Missing tool/workflow gaps
