@@ -6,6 +6,36 @@ labels:
   - area/mcp
   - type/bug
 body:
+  - type: dropdown
+    id: entry_surface
+    attributes:
+      label: Entry surface
+      options:
+        - Studio then MCP
+        - MCP then Studio
+        - Both directions
+    validations:
+      required: true
+
+  - type: textarea
+    id: page_urls
+    attributes:
+      label: Page URL(s)
+      placeholder: Studio URL(s) plus relevant docs/setup links
+    validations:
+      required: true
+
+  - type: textarea
+    id: click_path
+    attributes:
+      label: Click path / reproduction steps
+      placeholder: |
+        1. Configure plan in Studio
+        2. Trigger run via MCP in IDE
+        3. Observe handoff mismatch
+    validations:
+      required: true
+
   - type: textarea
     id: studio_state
     attributes:
@@ -20,6 +50,14 @@ body:
       label: MCP prompt used
     validations:
       required: true
+
+  - type: textarea
+    id: context_ids
+    attributes:
+      label: IDs and context
+      placeholder: runId, sessionId, tool IDs, payload contract versions
+    validations:
+      required: false
 
   - type: textarea
     id: expected
@@ -37,8 +75,16 @@ body:
       required: true
 
   - type: textarea
-    id: suggestion
+    id: suggested_fix
     attributes:
       label: Suggested fix
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      placeholder: Logs, payload snippets, and screenshots
     validations:
       required: true

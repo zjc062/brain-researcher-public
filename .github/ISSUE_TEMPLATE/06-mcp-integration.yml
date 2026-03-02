@@ -18,6 +18,25 @@ body:
       required: true
 
   - type: textarea
+    id: page_urls
+    attributes:
+      label: Related URL(s)
+      placeholder: Brain Researcher page URLs, docs URLs, or MCP setup references used
+    validations:
+      required: false
+
+  - type: textarea
+    id: click_path
+    attributes:
+      label: Reproduction steps
+      placeholder: |
+        1. Configure MCP in IDE
+        2. Run prompt
+        3. Observe tool search/schema/execution behavior
+    validations:
+      required: true
+
+  - type: textarea
     id: prompt
     attributes:
       label: Prompt used
@@ -39,6 +58,14 @@ body:
       required: true
 
   - type: textarea
+    id: context_ids
+    attributes:
+      label: IDs and context
+      placeholder: Tool ID/name, run ID, request ID, or other relevant identifiers
+    validations:
+      required: false
+
+  - type: textarea
     id: expected
     attributes:
       label: Expected behavior
@@ -48,22 +75,22 @@ body:
   - type: textarea
     id: actual
     attributes:
-      label: Actual behavior or logs
+      label: Actual behavior
     validations:
       required: true
 
   - type: textarea
-    id: payload_excerpt
-    attributes:
-      label: Payload or error excerpt
-      placeholder: Include JSON snippet if available
-    validations:
-      required: false
-
-  - type: textarea
-    id: suggestion
+    id: suggested_fix
     attributes:
       label: Suggested fix
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      placeholder: Logs, stack traces, JSON payload snippets, or screenshots
     validations:
       required: true
 

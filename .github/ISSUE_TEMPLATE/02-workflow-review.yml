@@ -5,6 +5,36 @@ labels:
   - area/workflow
   - type/scientific-review
 body:
+  - type: dropdown
+    id: entry_surface
+    attributes:
+      label: Entry surface
+      options:
+        - Library
+        - Studio Review pipeline
+        - Both
+    validations:
+      required: true
+
+  - type: textarea
+    id: page_urls
+    attributes:
+      label: Page URL(s)
+      placeholder: Paste exact URLs used during review
+    validations:
+      required: true
+
+  - type: textarea
+    id: click_path
+    attributes:
+      label: Click path / reproduction steps
+      placeholder: |
+        1. Library -> Search workflows
+        2. Open workflow
+        3. Add to Plan -> Studio -> Review pipeline
+    validations:
+      required: true
+
   - type: input
     id: workflow_name
     attributes:
@@ -22,25 +52,6 @@ body:
       required: true
 
   - type: dropdown
-    id: review_surface
-    attributes:
-      label: Where reviewed
-      options:
-        - Library
-        - Studio Review pipeline
-        - Both
-    validations:
-      required: true
-
-  - type: textarea
-    id: node_parameter_review
-    attributes:
-      label: Node and parameter findings
-      placeholder: node name -> parameter -> current value -> issue
-    validations:
-      required: true
-
-  - type: dropdown
     id: verify_state
     attributes:
       label: Verify status observed
@@ -49,6 +60,14 @@ body:
         - Blocked
         - Warning only
         - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: context_ids
+    attributes:
+      label: IDs and context
+      placeholder: Node IDs, parameter names, defaults reviewed
     validations:
       required: true
 
@@ -70,7 +89,15 @@ body:
     id: suggested_fix
     attributes:
       label: Suggested fix
-      placeholder: Reorder nodes, change defaults, improve Verify guidance
+      placeholder: Reorder nodes, update defaults, or improve Verify guidance
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      placeholder: Screenshots, copied UI text, logs, or payload snippets
     validations:
       required: true
 

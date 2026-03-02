@@ -5,6 +5,36 @@ labels:
   - area/studio
   - type/bug
 body:
+  - type: dropdown
+    id: entry_surface
+    attributes:
+      label: Entry surface
+      options:
+        - Studio Plan
+        - Studio Plan + Review pipeline
+        - Studio Plan + Ask Agent to fix
+    validations:
+      required: true
+
+  - type: textarea
+    id: page_urls
+    attributes:
+      label: Page URL(s)
+      placeholder: Paste exact Studio URL(s)
+    validations:
+      required: true
+
+  - type: textarea
+    id: click_path
+    attributes:
+      label: Click path / reproduction steps
+      placeholder: |
+        1. New Chat
+        2. Set Intent/Data/Concepts/Pipeline
+        3. Verify becomes blocked
+    validations:
+      required: true
+
   - type: input
     id: pipeline
     attributes:
@@ -27,16 +57,12 @@ body:
       required: true
 
   - type: textarea
-    id: steps
+    id: context_ids
     attributes:
-      label: Steps taken
-      placeholder: |
-        1. New Chat
-        2. Browse dataset/concepts
-        3. Select pipeline
-        4. Verify becomes blocked
+      label: IDs and context
+      placeholder: Workflow ID, run ID, dataset ID, or task ID if available
     validations:
-      required: true
+      required: false
 
   - type: textarea
     id: expected
@@ -63,8 +89,16 @@ body:
       required: true
 
   - type: textarea
-    id: suggestion
+    id: suggested_fix
     attributes:
       label: Suggested UX fix
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      placeholder: Screenshot(s), exact error text, and logs
     validations:
       required: true

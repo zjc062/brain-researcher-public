@@ -5,6 +5,37 @@ labels:
   - area/benchmark
   - type/scientific-review
 body:
+  - type: dropdown
+    id: entry_surface
+    attributes:
+      label: Entry surface
+      options:
+        - Benchmark
+        - Benchmark + Governance tab
+        - Benchmark + Dataset tab
+    validations:
+      required: true
+
+  - type: textarea
+    id: page_urls
+    attributes:
+      label: Page URL(s)
+      placeholder: https://brain-researcher.com/benchmark
+    validations:
+      required: true
+
+  - type: textarea
+    id: click_path
+    attributes:
+      label: Click path / reproduction steps
+      placeholder: |
+        1. Open Benchmark
+        2. Select dataset
+        3. Search task by ID
+        4. Open task details and inspect sections
+    validations:
+      required: true
+
   - type: input
     id: dataset
     attributes:
@@ -38,10 +69,10 @@ body:
       required: true
 
   - type: textarea
-    id: issue
+    id: context_ids
     attributes:
-      label: Problem found
-      placeholder: What is ambiguous, inconsistent, or scientifically weak
+      label: IDs and context
+      placeholder: Include task IDs, related output file names, or governance fields referenced
     validations:
       required: true
 
@@ -53,10 +84,26 @@ body:
       required: true
 
   - type: textarea
+    id: actual
+    attributes:
+      label: Actual wording/behavior
+      placeholder: What is ambiguous, inconsistent, or scientifically weak
+    validations:
+      required: true
+
+  - type: textarea
     id: proposed_change
     attributes:
-      label: Proposed wording or validation change
-      placeholder: Provide exact wording if possible
+      label: Suggested fix
+      placeholder: Provide exact wording or validation logic if possible
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      placeholder: Screenshots, copied text, or specific line fragments from the task card
     validations:
       required: true
 
