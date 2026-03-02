@@ -1,0 +1,71 @@
+name: Benchmark Task Review
+description: Review benchmark task wording, outputs, and pass criteria.
+title: "[BENCH] "
+labels:
+  - area/benchmark
+  - type/scientific-review
+body:
+  - type: input
+    id: dataset
+    attributes:
+      label: Benchmark dataset
+      placeholder: NeuroimageCodeBench v3.1
+    validations:
+      required: true
+
+  - type: input
+    id: task_id
+    attributes:
+      label: Task ID
+      placeholder: CLIN-005
+    validations:
+      required: true
+
+  - type: dropdown
+    id: section
+    attributes:
+      label: Primary section reviewed
+      options:
+        - Scope
+        - Goal
+        - Input Requirements
+        - Required Outputs
+        - Pass Criteria
+        - Expected Results
+        - Governance metadata
+        - Multiple sections
+    validations:
+      required: true
+
+  - type: textarea
+    id: issue
+    attributes:
+      label: Problem found
+      placeholder: What is ambiguous, inconsistent, or scientifically weak
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected wording/behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_change
+    attributes:
+      label: Proposed wording or validation change
+      placeholder: Provide exact wording if possible
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety checks
+      options:
+        - label: I did not click Save governance.
+          required: true
+        - label: I did not include PHI, secrets, or private credentials.
+          required: true

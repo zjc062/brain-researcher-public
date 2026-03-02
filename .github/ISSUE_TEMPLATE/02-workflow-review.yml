@@ -1,0 +1,85 @@
+name: Workflow Review
+description: Review official workflow defaults, node order, and Verify behavior.
+title: "[WF] "
+labels:
+  - area/workflow
+  - type/scientific-review
+body:
+  - type: input
+    id: workflow_name
+    attributes:
+      label: Workflow name
+      placeholder: Rest Connectome E2e
+    validations:
+      required: true
+
+  - type: input
+    id: pipeline_name
+    attributes:
+      label: Pipeline selected
+      placeholder: Connectivity and Parcellation
+    validations:
+      required: true
+
+  - type: dropdown
+    id: review_surface
+    attributes:
+      label: Where reviewed
+      options:
+        - Library
+        - Studio Review pipeline
+        - Both
+    validations:
+      required: true
+
+  - type: textarea
+    id: node_parameter_review
+    attributes:
+      label: Node and parameter findings
+      placeholder: node name -> parameter -> current value -> issue
+    validations:
+      required: true
+
+  - type: dropdown
+    id: verify_state
+    attributes:
+      label: Verify status observed
+      options:
+        - Not blocked
+        - Blocked
+        - Warning only
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggested_fix
+    attributes:
+      label: Suggested fix
+      placeholder: Reorder nodes, change defaults, improve Verify guidance
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety checks
+      options:
+        - label: I did not modify benchmark governance during review.
+          required: true
+        - label: I did not include PHI, secrets, or private credentials.
+          required: true

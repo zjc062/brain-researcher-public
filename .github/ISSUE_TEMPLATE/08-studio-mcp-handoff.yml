@@ -1,0 +1,44 @@
+name: Studio <-> MCP Handoff Issue
+description: Report state sync issues between Studio plan and MCP execution.
+title: "[HANDOFF] "
+labels:
+  - area/studio
+  - area/mcp
+  - type/bug
+body:
+  - type: textarea
+    id: studio_state
+    attributes:
+      label: Studio plan state
+      placeholder: Data, Concepts, Pipeline, Verify status
+    validations:
+      required: true
+
+  - type: textarea
+    id: mcp_prompt
+    attributes:
+      label: MCP prompt used
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected handoff behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual handoff failure
+      placeholder: Missing fields, default mismatch, version mismatch, contract drift
+    validations:
+      required: true
+
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: Suggested fix
+    validations:
+      required: true
