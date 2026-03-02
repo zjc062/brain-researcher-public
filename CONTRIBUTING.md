@@ -1,30 +1,28 @@
 # Contributing to Brain Researcher
 
-This guide is operational by design. Follow these steps directly when reviewing workflows, tools, benchmark tasks, KG reasoning, hypothesis generation, MCP integration, and studio execution behavior.
+This guide is designed for external reviewers to contribute with minimal setup and zero guesswork.
 
-## 1) Universal Rules
+## Universal Rules
 
-1. Use a read-only review mindset.
-Do not click Save governance unless you are an authorized maintainer.
-2. Do not run expensive jobs unless needed for the specific report.
-3. Do not submit PHI, secrets, credentials, or unauthorized data.
-4. Always report exact context and IDs.
+1. Use read-only review behavior by default.
+2. Do not click `Save governance` in Benchmark unless you are an authorized maintainer.
+3. Avoid long or expensive runs unless needed for the report.
+4. Do not submit PHI, secrets, private credentials, or unauthorized data.
 
-## 2) Required Report Payload (All Forms)
+## Unified Report Format (Use for every task)
 
-Every report should include:
+Use this structure in every issue. All forms in `.github/ISSUE_TEMPLATE/` map to this format.
 
-1. Entry surface.
-Library, Tools, Benchmark, NeuroKG, Hypothesis, Studio, Datasets, MCP.
-2. How you searched/navigated.
-Search terms, filter combinations, clicked path.
-3. Exact IDs.
-Workflow name, tool ID, benchmark task ID, node ID, dataset name, sessionId, runId.
-4. Expected behavior vs actual behavior.
-5. Suggested fix.
-Concrete wording, parameter change, schema fix, or UI guidance change.
+1. `Entry surface`: Library, Tools, Benchmark, NeuroKG, Hypothesis, Studio, Datasets, MCP.
+2. `Page URL(s)`: exact page used.
+3. `Search/filter path`: query terms, filters, and click path.
+4. `IDs`: workflow/tool/task/dataset/node/sessionId/runId as applicable.
+5. `Expected behavior`.
+6. `Actual behavior`.
+7. `Suggested fix`.
+8. `Evidence`: screenshot, logs, payload snippets, or copied UI message.
 
-## 3) Label Taxonomy
+## Label Taxonomy
 
 ### area labels
 
@@ -55,112 +53,255 @@ Concrete wording, parameter change, schema fix, or UI guidance change.
 - `status/deprecated`
 - `status/archived`
 
-## 4) Task Playbook
+## Task Playbook
 
-### 1. Add new tool/workflow gap
+Each task follows the same structure:
 
-- Open form: [01-gap-tool-workflow.yml](.github/ISSUE_TEMPLATE/01-gap-tool-workflow.yml)
+- `Entry`
+- `How to review`
+- `Review standards`
+- `Report template fields`
+
+### 1) Add new tool / new workflow gap
+
+- Issue form: [01-gap-tool-workflow.yml](.github/ISSUE_TEMPLATE/01-gap-tool-workflow.yml)
 - Entry:
-Tools (Advanced) or Library.
-- Review:
-Missing capability, duplicate tool, metadata gaps, unrealistic stage/cost.
+Top nav -> `Advanced` -> `Tools` and top nav -> `Library`.
+- How to review:
+1. In `Tools`, use `Search tools...` with domain terms.
+2. Open several tool cards and inspect metadata completeness.
+3. In `Library`, use `Search workflows...` and inspect workflow coverage.
+4. Check for missing workflows, duplicates, or naming inconsistency.
+- Review standards:
+1. Coverage: missing high-value tools/workflows are identified.
+2. Consistency: naming/grouping is coherent.
+3. Metadata quality: fields like domain/function/risk/stage/cost are populated and sensible.
+- Report template fields:
+1. Search terms used.
+2. Missing or duplicate item name/ID.
+3. Why this is a gap.
+4. Suggested workflow placement, stage, and cost tier.
 
-### 2. Workflow review
+### 2) Tool/workflow review
 
-- Open form: [02-workflow-review.yml](.github/ISSUE_TEMPLATE/02-workflow-review.yml)
+- Issue form: [02-workflow-review.yml](.github/ISSUE_TEMPLATE/02-workflow-review.yml)
 - Entry:
-Library -> Add to Plan -> Studio Plan/Verify.
-- Review:
-Node ordering, defaults (confounds/filter/atlas/HRF/threshold), blocked guidance quality.
+`Library` -> choose workflow -> `Add to Plan` -> `Studio` -> `Plan` -> `Review pipeline`.
+- How to review:
+1. Select one workflow and add it to Studio.
+2. Choose analysis type in Pipeline.
+3. Inspect Verify statuses (`Data validated`, `Workflow compatible`, `All inputs provided`, `Credits sufficient`).
+4. Open `Review pipeline` and inspect node order and defaults.
+- Review standards:
+1. Node chain follows best practice order.
+2. Defaults are defensible (confounds, filter, atlas, HRF, threshold).
+3. Verify guidance is actionable when blocked.
+- Report template fields:
+1. Workflow name and pipeline name.
+2. Node -> parameter -> current value -> suggested value.
+3. Which Verify line blocked and why.
+4. Concrete UI or default-fix suggestion.
 
-### 3. Benchmark review
+### 3) Benchmark review
 
-- Open form: [03-benchmark-review.yml](.github/ISSUE_TEMPLATE/03-benchmark-review.yml)
+- Issue form: [03-benchmark-review.yml](.github/ISSUE_TEMPLATE/03-benchmark-review.yml)
 - Entry:
-Benchmark board.
-- Review:
-Scope/Goal consistency, required outputs, pass criteria specificity, expected results realism.
+[Benchmark board](https://brain-researcher.com/benchmark).
+- How to review:
+1. Select dataset (for example NeuroimageCodeBench).
+2. Search task by ID or keyword.
+3. Open task detail and inspect Scope, Goal, Input Requirements, Required Outputs, Pass Criteria, Expected Results.
+4. Do not click `Save governance`.
+- Review standards:
+1. Scope and Goal are aligned.
+2. Required Outputs are specific and testable.
+3. Pass Criteria are measurable and unambiguous.
+4. Expected Results are scientifically realistic.
+- Report template fields:
+1. Dataset and task ID.
+2. Problematic section(s).
+3. Why current wording is weak.
+4. Proposed replacement wording or validation logic.
 
-### 4. NeuroKG edge/definition review
+### 4) Validate KG edge and definition quality
 
-- Open form: [04-neurokg-edge-review.yml](.github/ISSUE_TEMPLATE/04-neurokg-edge-review.yml)
+- Issue form: [04-neurokg-edge-review.yml](.github/ISSUE_TEMPLATE/04-neurokg-edge-review.yml)
 - Entry:
-NeuroKG task/disease/ONVOC tabs.
-- Review:
-Missing definitions, overstated edges, weak evidence, multihop semantic quality.
+[NeuroKG](https://brain-researcher.com/neurokg).
+- How to review:
+1. Search known node in Task, Disease, or ONVOC tabs.
+2. Inspect Overview definition and connections.
+3. Toggle `Show unverified evidence` depending on review goal.
+4. Run `Run multihop reasoning` and inspect path semantics.
+5. Check `Open deep-research prompt` for framing quality.
+- Review standards:
+1. Definitions are present and precise.
+2. Edges avoid overclaiming causality from correlation.
+3. Multihop chains are semantically coherent.
+4. Claims use appropriately strong evidence.
+- Report template fields:
+1. Node name and node ID.
+2. Edge/path under review.
+3. Expected edge semantics.
+4. Suggested qualifiers (species, population, modality) or relation type change.
 
-### 5. Hypothesis explorer review
+### 5) Hypothesis generator review
 
-- Open form: [05-hypothesis-review.yml](.github/ISSUE_TEMPLATE/05-hypothesis-review.yml)
+- Issue form: [05-hypothesis-review.yml](.github/ISSUE_TEMPLATE/05-hypothesis-review.yml)
 - Entry:
-Hypothesis explorer stages.
-- Review:
-Novelty, factuality, bias, and whether evidence/plan/validation are truly ready.
+`Hypothesis` page, including your sample runs:
+- `https://brain-researcher.com/hypothesis?sessionId=session-mm88g4ch-9ojsx0&runId=hrun-mm88h8nq-weo6jx`
+- `https://brain-researcher.com/hypothesis?sessionId=session-mm87c8o8-x27ht9&runId=hrun-mm87ciol-cp3r9x`
+- How to review:
+1. Identify stage (`clarifying`, `analysis ready`, `evidence ready`, `completed`).
+2. Inspect Research Canvas consistency.
+3. Inspect Candidates, Evidence, Plan, and Validation sections.
+4. Check whether claims are novel, factual, and unbiased.
+- Review standards:
+1. Novelty is real, not simple rephrasing.
+2. Evidence supports conclusions.
+3. No obvious factual hallucination.
+4. Plan includes confound control, leakage control, and reproducibility logic.
+5. Formatting and readability are usable.
+- Report template fields:
+1. `sessionId` and `runId`.
+2. Stage observed.
+3. Module reviewed (Canvas/Evidence/Plan/Validation).
+4. Issue type (novelty/factual/bias/format).
+5. Proposed correction.
 
-### 6. MCP integration report
+### 6) MCP integration review
 
-- Open form: [06-mcp-integration.yml](.github/ISSUE_TEMPLATE/06-mcp-integration.yml)
+- Issue form: [06-mcp-integration.yml](.github/ISSUE_TEMPLATE/06-mcp-integration.yml)
 - Entry:
-IDE (Cursor/Claude Code/Codex) MCP flow.
-- Review:
-Tool search quality, schema mismatch, payload mismatch, boundary safety.
+Cursor, Claude Code, or Codex with Brain Researcher MCP configured.
+- How to review:
+1. Prompt tool discovery (`use brain_researcher_mcp to ...`).
+2. Check schema comprehension and parameter fill quality.
+3. Execute tools and inspect payload/contract errors.
+4. Run boundary checks for unsafe path or shell behavior.
+- Review standards:
+1. Tool retrieval is relevant.
+2. Schema and payload match.
+3. Execution is reliable.
+4. Safety boundaries are enforced.
+- Report template fields:
+1. IDE and exact prompt.
+2. Failure mode (search/schema/execution/boundary).
+3. Error logs or payload excerpt.
+4. Suggested retrieval/schema/safety fix.
 
-### 7. Studio blocked report
+### 7) Studio run analysis blocked review
 
-- Open form: [07-studio-blocked.yml](.github/ISSUE_TEMPLATE/07-studio-blocked.yml)
+- Issue form: [07-studio-blocked.yml](.github/ISSUE_TEMPLATE/07-studio-blocked.yml)
 - Entry:
-Studio Plan -> Verify.
-- Review:
-Where unblock guidance is unclear or loops.
+`Studio` -> `Plan` -> `Verify`.
+- How to review:
+1. Start New Chat in Studio.
+2. Set Intent and try Data/Concepts/Pipeline.
+3. Observe which Verify item is blocked.
+4. Use `Review pipeline` and optionally `Ask Agent to fix`.
+- Review standards:
+1. Block reason is understandable.
+2. Unblock path is explicit.
+3. Error copy is precise and actionable.
+- Report template fields:
+1. Pipeline/workflow name.
+2. Blocked Verify item.
+3. Exact steps and message text.
+4. UX improvement proposal.
 
-### 8. Studio <-> MCP handoff issue
+### 8) Studio + MCP handoff review
 
-- Open form: [08-studio-mcp-handoff.yml](.github/ISSUE_TEMPLATE/08-studio-mcp-handoff.yml)
+- Issue form: [08-studio-mcp-handoff.yml](.github/ISSUE_TEMPLATE/08-studio-mcp-handoff.yml)
 - Entry:
-Configure in Studio, execute in MCP.
-- Review:
-Missing fields/default mismatches/contract drift between UI and MCP execution.
+Build plan in Studio, then execute through MCP in IDE.
+- How to review:
+1. Configure Data/Concepts/Pipeline in Studio.
+2. Trigger equivalent run through MCP.
+3. Compare expected contract and actual payload requirements.
+- Review standards:
+1. Studio state is transferable.
+2. Defaults are consistent between UI and MCP.
+3. No hidden required parameter mismatch.
+- Report template fields:
+1. Studio state snapshot.
+2. MCP prompt used.
+3. Expected handoff behavior.
+4. Actual mismatch and suggested contract fix.
 
-### 9. Dataset coverage/metadata gap
+### 9) Dataset coverage and metadata review
 
-- Open form: [09-dataset-coverage.yml](.github/ISSUE_TEMPLATE/09-dataset-coverage.yml)
+- Issue form: [09-dataset-coverage.yml](.github/ISSUE_TEMPLATE/09-dataset-coverage.yml)
 - Entry:
-Datasets explorer.
-- Review:
-Missing datasets, incomplete metadata, filter/search failure, Add to Plan errors.
+`Datasets` explorer.
+- How to review:
+1. Search by dataset name/portal/keyword.
+2. Apply filters.
+3. Inspect dataset card metadata.
+4. Test `View dataset` and `Add to Plan`.
+- Review standards:
+1. Coverage includes expected datasets.
+2. Metadata is complete and accurate.
+3. Search/filter behavior has good recall.
+4. Add to Plan works reliably.
+- Report template fields:
+1. Portal/filter combo.
+2. Dataset name.
+3. Problem type.
+4. Expected vs actual result.
+5. Metadata or pipeline integration fix.
 
-### 10. Docs/demo reproducibility
+### 10) Documentation/demo reproducibility review
 
-- Open form: [10-docs-demo-repro.yml](.github/ISSUE_TEMPLATE/10-docs-demo-repro.yml)
+- Issue form: [10-docs-demo-repro.yml](.github/ISSUE_TEMPLATE/10-docs-demo-repro.yml)
 - Entry:
-Any public docs or demo trace.
-- Review:
-Zero-assumption reproducibility and exact break point.
+Any official doc page or demo trace.
+- How to review:
+1. Follow instructions from zero assumptions.
+2. Stop exactly when blocked.
+3. Record the first failing step and message.
+- Review standards:
+1. A new user can complete documented steps.
+2. Prerequisites are explicit.
+3. Error handling guidance exists.
+- Report template fields:
+1. Doc/demo page name.
+2. Steps followed.
+3. Expected output.
+4. Actual break point.
+5. Proposed documentation patch.
 
-### 11. Open question
+### 11) Open question
 
-- Open form: [11-open-question.yml](.github/ISSUE_TEMPLATE/11-open-question.yml)
+- Issue form: [11-open-question.yml](.github/ISSUE_TEMPLATE/11-open-question.yml)
 - Entry:
-Architecture or product direction questions.
-- Review:
-Question framing, current state, concrete proposal, tradeoffs, next steps.
+Use for architecture/product questions that need tracked decision-making.
+- How to review:
+1. Define the decision question.
+2. Document current state.
+3. Propose one concrete direction.
+4. State tradeoffs and next steps.
+- Review standards:
+1. Problem is clearly scoped.
+2. Proposal is actionable.
+3. Risks and migration cost are explicit.
+- Report template fields:
+1. Area label.
+2. Open question statement.
+3. Current state summary.
+4. Proposed direction.
+5. Tradeoffs and next steps.
 
-## 5) Issues vs Discussions
+## Issues vs Discussions
 
-1. Use Issues for actionable tracking items and structured reviews.
-2. Use Discussions for open-ended community conversation.
-3. For open questions that need decision tracking, use the Open question issue form.
+1. Use Issues for all structured review tasks and tracked open questions.
+2. Use Discussions for broad conversation and community Q&A.
 
-## 6) Maintainer Triage Flow
+## Maintainer Triage Flow
 
-1. Confirm `area/*` and `type/*` labels are present.
-2. Move lifecycle manually through status labels.
-3. Convert broad discussions into scoped follow-up issues when needed.
-
-## 7) Governance and Safety Reminder
-
-1. Unauthorized reviewers must not change benchmark governance fields.
-2. Do not include private infrastructure details in screenshots/logs.
-3. Redact sensitive payload sections before posting.
+1. Confirm `area/*` and `type/*` labels.
+2. Apply lifecycle label manually (`status/*`).
+3. Convert broad threads into scoped execution issues when needed.
 
 By participating, you agree to [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).

@@ -4,77 +4,81 @@
 
 [Visit Brain Researcher](https://brain-researcher.com) | [Report an Issue](https://github.com/zjc062/brain-researcher-public/issues) | [Join Discussions](https://github.com/zjc062/brain-researcher-public/discussions)
 
-Brain Researcher is an open neuroimaging assistant that turns conversational intent into reproducible workflows, with a dual interface:
-
-1. Web UI for planning, library browsing, benchmark review, knowledge graph exploration, and hypothesis generation.
-2. MCP integration for triggering the same workflows in IDE agent environments (Cursor, Claude Code, Codex) with strict schema and execution boundaries.
+Brain Researcher is an open neuroimaging assistant that turns conversational intent into reproducible workflows.
 
 ## Project Goal
 
 We want neuroimaging analysis to be:
 
 1. Conversational.
-Users describe goals, constraints, and data at a high level.
 2. Rigorously scoped.
-Tasks encode what good science means: inputs, outputs, and pass criteria.
 3. Reproducible by design.
-Workflows are explicit node chains with parameters and provenance-friendly outputs.
-4. Auditable.
-Public benchmark and KG surfaces allow transparent community review.
+4. Auditable in public.
 
 ## Current Architecture
 
-### 1) Web UI
+### Web UI
 
-- Studio: Intent -> Data -> Concepts -> Pipeline -> Verify, plus Results/Steps views.
-- Library: official workflows as explicit node chains.
-- Tools (advanced): tool catalog metadata and auditing surface.
-- Datasets: dataset explorer and Add to Plan flow.
-- Benchmark: task, dataset, and governance surface.
-- NeuroKG (advanced): node/edge/evidence exploration, multihop reasoning.
-- Hypothesis: staged hypothesis exploration and validation artifacts.
+- Studio: Intent -> Data -> Concepts -> Pipeline -> Verify.
+- Library: official workflow catalog.
+- Tools (Advanced): tool catalog and metadata auditing.
+- Datasets: search/filter and Add to Plan.
+- Benchmark: task instructions and governance surface.
+- NeuroKG (Advanced): node/edge/evidence and multihop review.
+- Hypothesis: staged ideation and validation artifacts.
 
-### 2) MCP Integration
+### MCP integration
 
 - Tool discovery and ranking.
-- Tool schema and payload contract correctness.
+- Schema/payload contract checks.
 - Execution reliability.
-- Boundary safety against unsafe file/path/shell behavior.
+- Boundary safety.
 
 ## Current Stage
 
-We are in a hardening phase.
+We are in a hardening phase and need reviewer feedback across methods, UX, KG quality, and MCP reliability.
 
-1. Workflow defaults and node ordering need best-practice review.
-2. Benchmark tasks need tighter wording and pass criteria specificity.
-3. KG definitions and edges need quality cleanup.
-4. MCP integration needs robustness and safety validation.
+## 5-Minute Contributor Quickstart
 
-## Where Community Can Help
+1. Open [brain-researcher.com](https://brain-researcher.com).
+2. Pick one review track from the table below.
+3. Follow the click path in [CONTRIBUTING.md](CONTRIBUTING.md).
+4. Submit one issue using the linked form.
+5. Include IDs, expected vs actual behavior, and a concrete fix suggestion.
 
-| Task | Open Form |
-| --- | --- |
-| Add missing tool/workflow gaps | [Gap request](https://github.com/zjc062/brain-researcher-public/issues/new?template=01-gap-tool-workflow.yml) |
-| Review workflow defaults and node order | [Workflow review](https://github.com/zjc062/brain-researcher-public/issues/new?template=02-workflow-review.yml) |
-| Review benchmark task quality | [Benchmark review](https://github.com/zjc062/brain-researcher-public/issues/new?template=03-benchmark-review.yml) |
-| Validate NeuroKG definitions and edges | [NeuroKG review](https://github.com/zjc062/brain-researcher-public/issues/new?template=04-neurokg-edge-review.yml) |
-| Audit Hypothesis Explorer outputs | [Hypothesis review](https://github.com/zjc062/brain-researcher-public/issues/new?template=05-hypothesis-review.yml) |
-| Report MCP integration issues | [MCP report](https://github.com/zjc062/brain-researcher-public/issues/new?template=06-mcp-integration.yml) |
-| Report Studio blocked flows | [Studio blocked](https://github.com/zjc062/brain-researcher-public/issues/new?template=07-studio-blocked.yml) |
-| Report Studio <-> MCP handoff mismatch | [Handoff issue](https://github.com/zjc062/brain-researcher-public/issues/new?template=08-studio-mcp-handoff.yml) |
-| Report dataset coverage/metadata gaps | [Dataset gap](https://github.com/zjc062/brain-researcher-public/issues/new?template=09-dataset-coverage.yml) |
-| Reproduce docs/demo trace failures | [Docs repro](https://github.com/zjc062/brain-researcher-public/issues/new?template=10-docs-demo-repro.yml) |
-| Raise open architecture/product questions | [Open question](https://github.com/zjc062/brain-researcher-public/issues/new?template=11-open-question.yml) |
+If credits block execution tests, you can top up in `Settings` at `https://brain-researcher.com/settings`.
+
+## Review Tracks
+
+| Review track | Where to click | Issue form |
+| --- | --- | --- |
+| Missing tool/workflow | Advanced -> Tools, then Library | [01-gap-tool-workflow](https://github.com/zjc062/brain-researcher-public/issues/new?template=01-gap-tool-workflow.yml) |
+| Existing workflow defaults | Library -> Add to Plan -> Studio -> Review pipeline | [02-workflow-review](https://github.com/zjc062/brain-researcher-public/issues/new?template=02-workflow-review.yml) |
+| Benchmark task rigor | [Benchmark](https://brain-researcher.com/benchmark) | [03-benchmark-review](https://github.com/zjc062/brain-researcher-public/issues/new?template=03-benchmark-review.yml) |
+| KG definitions/edges | [NeuroKG](https://brain-researcher.com/neurokg) | [04-neurokg-edge-review](https://github.com/zjc062/brain-researcher-public/issues/new?template=04-neurokg-edge-review.yml) |
+| Hypothesis quality | Hypothesis Explorer | [05-hypothesis-review](https://github.com/zjc062/brain-researcher-public/issues/new?template=05-hypothesis-review.yml) |
+| MCP in IDE | Cursor / Claude Code / Codex with MCP | [06-mcp-integration](https://github.com/zjc062/brain-researcher-public/issues/new?template=06-mcp-integration.yml) |
+| Studio blocked run | Studio -> Plan -> Verify | [07-studio-blocked](https://github.com/zjc062/brain-researcher-public/issues/new?template=07-studio-blocked.yml) |
+| Studio -> MCP handoff | Configure in Studio, execute via MCP | [08-studio-mcp-handoff](https://github.com/zjc062/brain-researcher-public/issues/new?template=08-studio-mcp-handoff.yml) |
+| Dataset coverage/metadata | Datasets explorer | [09-dataset-coverage](https://github.com/zjc062/brain-researcher-public/issues/new?template=09-dataset-coverage.yml) |
+| Docs/demo reproducibility | Docs or demo trace | [10-docs-demo-repro](https://github.com/zjc062/brain-researcher-public/issues/new?template=10-docs-demo-repro.yml) |
+| Open architecture question | Any architecture/product question | [11-open-question](https://github.com/zjc062/brain-researcher-public/issues/new?template=11-open-question.yml) |
+
+## Label System
+
+- `area/*`: where the issue belongs.
+- `type/*`: bug, feature-request, scientific-review, discussion.
+- `status/*`: maintainer lifecycle labels.
 
 ## Important Reviewer Rules
 
-1. Do not edit benchmark governance unless you are an authorized maintainer.
-2. Treat advanced Tools and NeuroKG views as auditing surfaces.
-3. Do not submit PHI, secrets, or private credentials.
-4. Report exact IDs whenever possible: workflow, tool, task, dataset, node, sessionId, runId.
+1. Use read-only review behavior unless explicitly asked to edit.
+2. Do not click `Save governance` in Benchmark unless you are authorized.
+3. Do not include PHI, secrets, or private credentials.
+4. Include exact IDs wherever possible.
 
 ## Contributing and Governance
 
-- Contribution guide: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Full contributor playbook: [CONTRIBUTING.md](CONTRIBUTING.md)
 - Code of Conduct: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - License: [LICENSE](LICENSE)
