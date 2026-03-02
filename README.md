@@ -81,13 +81,13 @@ Note: current Codex stores MCP servers in `~/.codex/config.toml`.
 
 ### Cursor
 
-Open Cursor MCP settings and add an HTTP server named `brain-researcher-http` with:
+Open Cursor MCP settings and add an HTTP server named `brain-researcher-prod` with:
 
 ```json
 {
   "mcpServers": {
-    "brain-researcher-http": {
-      "url": "<MCP_ENDPOINT>",
+    "brain-researcher-prod": {
+      "url": "https://brain-researcher.com/mcp",
       "headers": {
         "Authorization": "Bearer ${BR_MCP_TOKEN}",
         "Accept": "application/json, text/event-stream"
@@ -102,19 +102,35 @@ Open Cursor MCP settings and add an HTTP server named `brain-researcher-http` wi
 Register directly with CLI:
 
 ```bash
-claude mcp add-json brain-researcher-http "{
-  \"type\":\"http\",
-  \"url\":\"<MCP_ENDPOINT>\",
-  \"headers\":{
-    \"Authorization\":\"Bearer ${BR_MCP_TOKEN}\",
-    \"Accept\":\"application/json, text/event-stream\"
-  }
-}"
+claude mcp add -s user --transport http brain-researcher-prod \
+  https://brain-researcher.com/mcp \
+  --header 'Authorization: Bearer ${BR_MCP_TOKEN}' \
+  --header 'Accept: application/json, text/event-stream'
 ```
 
 3. Reload MCP connectors in your client.
 4. Smoke test prompt:
 `Use brain-researcher-prod MCP and call server_info.`
+
+### One-Click Self-Checks (Prod MCP)
+
+Codex (server registered with correct prod URL):
+
+```bash
+codex mcp list --json | python -c 'import json,sys; s={x["name"]:x for x in json.load(sys.stdin)}; ok=("brain-researcher-prod" in s and s["brain-researcher-prod"]["transport"].get("url")=="https://brain-researcher.com/mcp"); print("OK" if ok else "FAIL"); raise SystemExit(0 if ok else 1)'
+```
+
+Cursor (token + prod endpoint preflight used by Cursor HTTP MCP):
+
+```bash
+TOKEN="${BR_MCP_TOKEN:?BR_MCP_TOKEN is not set}"; code=$(curl --max-time 8 -sS -o /dev/null -w '%{http_code}' -H "Authorization: Bearer ${TOKEN}" -H 'Accept: application/json, text/event-stream' https://brain-researcher.com/mcp 2>/dev/null || true); [ "$code" = "200" ] && echo "OK (HTTP $code)" || (echo "FAIL (HTTP $code)"; exit 1)
+```
+
+Claude Code (server connected to prod MCP):
+
+```bash
+claude mcp list | rg -q 'brain-researcher-prod: .*\(HTTP\) - ✓ Connected' && echo "OK" || (echo "FAIL"; claude mcp list | sed -n '/brain-researcher-prod/p'; exit 1)
+```
 
 ## 5-Minute Contributor Quickstart
 
