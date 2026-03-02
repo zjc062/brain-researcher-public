@@ -2,6 +2,27 @@
 
 Use this playbook for product and scientific review contributions.
 
+## Purpose
+
+This playbook turns community review into reproducible bug reports and scientific feedback that maintainers can act on quickly.
+
+## Project Context
+
+Brain Researcher is in a hardening phase:
+
+1. Core product surfaces are live.
+2. Main work now is reliability, scientific rigor, and clearer UX.
+3. High-quality issue reports are the fastest path to improvement.
+
+## Scope
+
+Use this document for:
+
+- Studio, MCP, NeuroKG, Hypothesis, Datasets, and docs review.
+- Structured issue submission through `.github/ISSUE_TEMPLATE/*`.
+
+For benchmark task authoring details, use `benchmark/CONTRIBUTING_TASKS.md`.
+
 ## Universal Reporting Format
 
 Use this order in every report:

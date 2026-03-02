@@ -1,12 +1,35 @@
 # Contributing to Brain Researcher
 
-This guide is designed for external reviewers to contribute with minimal setup and zero guesswork.
+This guide explains how external contributors can review Brain Researcher with minimal setup and clear reporting standards.
+
+## Overall Aim
+
+Brain Researcher aims to make neuroimaging analysis:
+
+1. Conversational.
+2. Rigorously scoped.
+3. Reproducible by design.
+4. Auditable in public.
+
+## Scope of This Public Repo
+
+This repository is the public collaboration hub for:
+
+- Review workflows and issue templates.
+- Benchmark task assets and migration artifacts.
+- Quality hardening backlog and architecture discussions.
+
+This repository is not a full mirror of private production internals.
+
+## Current Status
+
+Current phase: hardening (quality, reliability, and scientific rigor improvements across UI, MCP, KG, and benchmark surfaces).
 
 ## Start Here
 
-1. Product review contributions (Studio, MCP, NeuroKG, Hypothesis, datasets): use `REVIEW_PLAYBOOK.md`.
-2. Benchmark task authoring contributions (`benchmark/tasks/codebench/**`): use `benchmark/CONTRIBUTING_TASKS.md`.
-3. If unsure, use this document as taxonomy and policy reference, then follow the playbook above.
+1. Product/scientific review (Studio, MCP, NeuroKG, Hypothesis, datasets): use `REVIEW_PLAYBOOK.md`.
+2. Benchmark task authoring (`benchmark/tasks/codebench/**`): use `benchmark/CONTRIBUTING_TASKS.md`.
+3. If unsure: follow `REVIEW_PLAYBOOK.md`, submit one issue, and include IDs plus expected vs actual behavior.
 
 ## Universal Rules
 

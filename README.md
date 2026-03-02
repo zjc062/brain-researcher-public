@@ -2,163 +2,92 @@
 
 **Ask a neuro question. Get a reproducible result.**
 
-[Visit Brain Researcher](https://brain-researcher.com) | [Report an Issue](https://github.com/zjc062/brain-researcher-public/issues) | [Join Discussions](https://github.com/zjc062/brain-researcher-public/discussions)
+[Visit Brain Researcher](https://brain-researcher.com) | [Issues](https://github.com/zjc062/brain-researcher-public/issues) | [Discussions](https://github.com/zjc062/brain-researcher-public/discussions)
 
-Brain Researcher is an open neuroimaging assistant that turns conversational intent into reproducible workflows.
+Brain Researcher is an open-source neuroimaging AI agent for researchers and developers who want to move from research intent to auditable workflows.
 
-## Project Goal
+Instead of relying on free-form code generation, Brain Researcher uses schema-constrained planning and a curated tool catalog to reduce execution errors and improve reproducibility.
 
-We want neuroimaging analysis to be:
+## What It Does
 
-1. Conversational.
-2. Rigorously scoped.
-3. Reproducible by design.
-4. Auditable in public.
+- Helps users plan analyses in plain language.
+- Grounds concepts and hypotheses using NeuroKG (task, region, disease, method relationships).
+- Turns plans into explicit workflow node chains (DAG-style pipelines).
+- Tracks parameters, tool versions, and run artifacts for review.
+- Supports both Web UI workflows and IDE-based MCP workflows.
 
-## Current Architecture
+## How It Works (High Level)
+
+1. Agent planning layer: a planner agent converts user intent into a workflow plan instead of writing free-form scripts.
+2. Knowledge grounding layer: NeuroKG is queried to structure concepts (tasks, regions, diseases, methods) and support better hypothesis/planning decisions.
+3. Workflow compiler layer: the agent selects from a curated tool catalog and builds a DAG-style node chain.
+4. Contract validation layer: tool input/output schemas are checked before execution to reduce payload/parameter mismatches.
+5. Execution layer: the same backend executes through Web Studio and MCP (Codex/Cursor/Claude Code) with traceable runs.
+
+## Data Flow (Intent -> Run)
+
+1. User provides intent, constraints, and dataset context.
+2. Agent grounds key concepts with NeuroKG.
+3. Agent compiles an executable node chain from validated tools.
+4. Schema checks verify node-to-node compatibility.
+5. Run executes and emits artifacts, logs, and parameters for audit/review.
+
+## Current Status
+
+As of March 2, 2026, Brain Researcher is in a hardening phase:
+
+- Core surfaces are live (Studio, Library, Benchmark, NeuroKG, Hypothesis, MCP bridge).
+- Main work is reliability, scientific rigor, and review quality.
+- Current priorities are tracked in concrete issues below.
+
+## Architecture At A Glance
 
 ### Web UI
 
-- Studio: Intent -> Data -> Concepts -> Pipeline -> Verify.
-- Library: official workflow catalog.
-- Tools (Advanced): tool catalog and metadata auditing.
-- Datasets: search/filter and Add to Plan.
-- Benchmark: task instructions and governance surface.
-- NeuroKG (Advanced): node/edge/evidence and multihop review.
-- Hypothesis: staged ideation and validation artifacts.
+- `Studio`: Intent -> Data -> Concepts -> Pipeline -> Verify.
+- `Library`: official workflow catalog (node chains + defaults).
+- `Tools` (Advanced): tool catalog and metadata auditing.
+- `Datasets`: search/filter + Add to Plan.
+- `Benchmark`: task definitions, criteria, governance review.
+- `NeuroKG` (Advanced): node/edge/evidence exploration and multihop review.
+- `Hypothesis`: staged ideation (`clarifying` -> `analysis/evidence ready` -> `completed`).
 
-### MCP integration
+### MCP Agent Bridge
 
-- Tool discovery and ranking.
-- Schema/payload contract checks.
-- Execution reliability.
-- Boundary safety.
+- Tool discovery and ranking in IDE agents (Codex/Cursor/Claude Code).
+- Tool schema and payload contract checks.
+- Execution reliability and traceability.
+- Boundary safety for unsafe or hallucinated actions.
 
-## Current Stage
+### Review Feedback Loop
 
-We are in a hardening phase and need reviewer feedback across methods, UX, KG quality, and MCP reliability.
-
-## Contribution Lanes
-
-1. Product and scientific review lane: use [REVIEW_PLAYBOOK.md](REVIEW_PLAYBOOK.md) and submit via issue forms.
-2. Benchmark task authoring lane: use [benchmark/CONTRIBUTING_TASKS.md](benchmark/CONTRIBUTING_TASKS.md) for `benchmark/tasks/codebench/**` changes.
-
-## MCP Setup (Quick)
-
-Use maintainer-provided MCP endpoint and token. Do not commit credentials.
-
-1. Export token locally:
-
-```bash
-export BR_MCP_TOKEN="<your_token>"
-```
-
-2. Use one of the client setups below.
-
-### Codex CLI
-
-Option A: local stdio server
-
-```bash
-codex mcp add brain-researcher -- brain-researcher-mcp
-```
-
-Option B: production HTTP MCP server
-
-```bash
-codex mcp add brain-researcher-prod \
-  --url "https://brain-researcher.com/mcp" \
-  --bearer-token-env-var BR_MCP_TOKEN
-```
-
-Check:
-
-```bash
-codex mcp list --json
-```
-
-Note: current Codex stores MCP servers in `~/.codex/config.toml`.
-
-### Cursor
-
-Open Cursor MCP settings and add an HTTP server named `brain-researcher-prod` with:
-
-```json
-{
-  "mcpServers": {
-    "brain-researcher-prod": {
-      "url": "https://brain-researcher.com/mcp",
-      "headers": {
-        "Authorization": "Bearer ${BR_MCP_TOKEN}",
-        "Accept": "application/json, text/event-stream"
-      }
-    }
-  }
-}
-```
-
-### Claude Code
-
-Register directly with CLI:
-
-```bash
-claude mcp add -s user --transport http brain-researcher-prod \
-  https://brain-researcher.com/mcp \
-  --header 'Authorization: Bearer ${BR_MCP_TOKEN}' \
-  --header 'Accept: application/json, text/event-stream'
-```
-
-3. Reload MCP connectors in your client.
-4. Smoke test prompt:
-`Use brain-researcher-prod MCP and call server_info.`
-
-### One-Click Self-Checks (Prod MCP)
-
-Codex (server registered with correct prod URL):
-
-```bash
-codex mcp list --json | python -c 'import json,sys; s={x["name"]:x for x in json.load(sys.stdin)}; ok=("brain-researcher-prod" in s and s["brain-researcher-prod"]["transport"].get("url")=="https://brain-researcher.com/mcp"); print("OK" if ok else "FAIL"); raise SystemExit(0 if ok else 1)'
-```
-
-Cursor (token + prod endpoint preflight used by Cursor HTTP MCP):
-
-```bash
-TOKEN="${BR_MCP_TOKEN:?BR_MCP_TOKEN is not set}"; code=$(curl --max-time 8 -sS -o /dev/null -w '%{http_code}' -H "Authorization: Bearer ${TOKEN}" -H 'Accept: application/json, text/event-stream' https://brain-researcher.com/mcp 2>/dev/null || true); [ "$code" = "200" ] && echo "OK (HTTP $code)" || (echo "FAIL (HTTP $code)"; exit 1)
-```
-
-Claude Code (server connected to prod MCP):
-
-```bash
-claude mcp list | rg -q 'brain-researcher-prod: .*\(HTTP\) - ✓ Connected' && echo "OK" || (echo "FAIL"; claude mcp list | sed -n '/brain-researcher-prod/p'; exit 1)
-```
+1. Explore in UI or MCP.
+2. Reproduce and capture IDs/logs.
+3. Submit via issue forms.
+4. Maintainers triage and ship fixes.
 
 ## 5-Minute Contributor Quickstart
 
 1. Open [brain-researcher.com](https://brain-researcher.com).
 2. Pick one review track from the table below.
-3. Follow the click path in [REVIEW_PLAYBOOK.md](REVIEW_PLAYBOOK.md) (or [CONTRIBUTING.md](CONTRIBUTING.md)).
-4. Submit one issue using the linked form.
-5. Include IDs, expected vs actual behavior, and a concrete fix suggestion.
+3. Follow [REVIEW_PLAYBOOK.md](REVIEW_PLAYBOOK.md).
+4. File one issue with exact IDs, expected vs actual behavior, and a concrete fix suggestion.
 
-If credits block execution tests, you can top up in `Settings` at `https://brain-researcher.com/settings`.
+If credits block execution tests, top up in `Settings` at `https://brain-researcher.com/settings`.
 
-## TODO Dashboard
+## Priority Backlog
 
-Authoritative source of truth is GitHub Issues (assignable, triageable, closable).
+Source of truth is GitHub Issues.
 
-- Global TODO overview: this section.
-- Benchmark-specific backlog: [benchmark/TODO.md](benchmark/TODO.md).
-- Rule: open/update issue first, then add the issue link here.
+| Priority | Theme | Concrete issues |
+| --- | --- | --- |
+| P0 | MCP runtime and privacy hardening | [#2](https://github.com/zjc062/brain-researcher-public/issues/2), [#5](https://github.com/zjc062/brain-researcher-public/issues/5) |
+| P0 | Studio verify guardrails and validation | [#6](https://github.com/zjc062/brain-researcher-public/issues/6), [#7](https://github.com/zjc062/brain-researcher-public/issues/7), [#8](https://github.com/zjc062/brain-researcher-public/issues/8), [#9](https://github.com/zjc062/brain-researcher-public/issues/9) |
+| P1 | NeuroKG query/curation/scoring quality | [#3](https://github.com/zjc062/brain-researcher-public/issues/3), [#4](https://github.com/zjc062/brain-researcher-public/issues/4), [#10](https://github.com/zjc062/brain-researcher-public/issues/10) |
+| P1 | Open architecture decisions | [#11](https://github.com/zjc062/brain-researcher-public/issues/11), [#12](https://github.com/zjc062/brain-researcher-public/issues/12), [#13](https://github.com/zjc062/brain-researcher-public/issues/13), [#14](https://github.com/zjc062/brain-researcher-public/issues/14) |
+| P1-P2 | Workflow, hypothesis, dataset, docs lanes | [Open issue forms](https://github.com/zjc062/brain-researcher-public/issues/new/choose) |
 
-| Priority | Area | TODO | Issue |
-| --- | --- | --- | --- |
-| P0 | `area/mcp` | Stabilize tool search/schema/execution + safety boundary regressions | [Open MCP issues](https://github.com/zjc062/brain-researcher-public/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fmcp) |
-| P0 | `area/studio` | Reduce Verify blocked loops with clearer unblock guidance | [Open Studio issues](https://github.com/zjc062/brain-researcher-public/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fstudio) |
-| P0 | `area/workflow` | Harden default parameters and node ordering in official workflows | [Open Workflow issues](https://github.com/zjc062/brain-researcher-public/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fworkflow) |
-| P1 | `area/neurokg` | Clean noisy edges/definitions and improve multihop quality | [Open NeuroKG issues](https://github.com/zjc062/brain-researcher-public/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fneurokg) |
-| P1 | `area/hypothesis` | Improve novelty/factual quality and reduce predictive-model bias | [Open Hypothesis issues](https://github.com/zjc062/brain-researcher-public/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fhypothesis) |
-| P1 | `area/datasets` | Increase dataset coverage and metadata completeness | [Open Dataset issues](https://github.com/zjc062/brain-researcher-public/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fdatasets) |
-| P2 | `area/docs` | Improve docs/demo reproducibility and first-run onboarding | [Open Docs issues](https://github.com/zjc062/brain-researcher-public/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fdocs) |
+Benchmark-only backlog: [benchmark/TODO.md](benchmark/TODO.md)
 
 ## Review Tracks
 
@@ -176,23 +105,85 @@ Authoritative source of truth is GitHub Issues (assignable, triageable, closable
 | Docs/demo reproducibility | Docs or demo trace | [10-docs-demo-repro](https://github.com/zjc062/brain-researcher-public/issues/new?template=10-docs-demo-repro.yml) |
 | Open architecture question | Any architecture/product question | [11-open-question](https://github.com/zjc062/brain-researcher-public/issues/new?template=11-open-question.yml) |
 
-## Label System
+## MCP Setup (Quick)
 
-- `area/*`: where the issue belongs.
-- `type/*`: bug, feature-request, scientific-review, discussion.
-- `status/*`: maintainer lifecycle labels.
+Use the maintainer-provided endpoint and token. Never commit credentials.
 
-## Important Reviewer Rules
+1. Export token:
 
-1. Use read-only review behavior unless explicitly asked to edit.
-2. Do not click `Save governance` in Benchmark unless you are authorized.
+```bash
+export BR_MCP_TOKEN="<your_token>"
+```
+
+2. Configure one client:
+
+Codex (prod MCP):
+
+```bash
+codex mcp add brain-researcher-prod \
+  --url "https://brain-researcher.com/mcp" \
+  --bearer-token-env-var BR_MCP_TOKEN
+```
+
+Cursor (`mcp.json` snippet):
+
+```json
+{
+  "mcpServers": {
+    "brain-researcher-prod": {
+      "url": "https://brain-researcher.com/mcp",
+      "headers": {
+        "Authorization": "Bearer ${BR_MCP_TOKEN}",
+        "Accept": "application/json, text/event-stream"
+      }
+    }
+  }
+}
+```
+
+Claude Code:
+
+```bash
+claude mcp add -s user --transport http brain-researcher-prod \
+  https://brain-researcher.com/mcp \
+  --header 'Authorization: Bearer ${BR_MCP_TOKEN}' \
+  --header 'Accept: application/json, text/event-stream'
+```
+
+3. Smoke test prompt:
+`Use brain-researcher-prod MCP and call server_info.`
+
+### One-Click Self-Checks
+
+Codex:
+
+```bash
+codex mcp list --json | python -c 'import json,sys; s={x["name"]:x for x in json.load(sys.stdin)}; ok=("brain-researcher-prod" in s and s["brain-researcher-prod"]["transport"].get("url")=="https://brain-researcher.com/mcp"); print("OK" if ok else "FAIL"); raise SystemExit(0 if ok else 1)'
+```
+
+Cursor:
+
+```bash
+TOKEN="${BR_MCP_TOKEN:?BR_MCP_TOKEN is not set}"; code=$(curl --max-time 8 -sS -o /dev/null -w '%{http_code}' -H "Authorization: Bearer ${TOKEN}" -H 'Accept: application/json, text/event-stream' https://brain-researcher.com/mcp 2>/dev/null || true); [ "$code" = "200" ] && echo "OK (HTTP $code)" || (echo "FAIL (HTTP $code)"; exit 1)
+```
+
+Claude Code:
+
+```bash
+claude mcp list | rg -q 'brain-researcher-prod: .*\(HTTP\) - ✓ Connected' && echo "OK" || (echo "FAIL"; claude mcp list | sed -n '/brain-researcher-prod/p'; exit 1)
+```
+
+## Reviewer Rules
+
+1. Default to read-only review behavior.
+2. Do not click `Save governance` in Benchmark unless authorized.
 3. Do not include PHI, secrets, or private credentials.
-4. Include exact IDs wherever possible.
+4. Include exact IDs whenever possible (workflow/tool/task/dataset/node/sessionId/runId).
 
-## Contributing and Governance
+## Contributing And Governance
 
-- Full contributor playbook: [CONTRIBUTING.md](CONTRIBUTING.md)
-- Reviewer onboarding: [REVIEW_PLAYBOOK.md](REVIEW_PLAYBOOK.md)
+- Contributor guide: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Reviewer playbook: [REVIEW_PLAYBOOK.md](REVIEW_PLAYBOOK.md)
 - Benchmark task authoring: [benchmark/CONTRIBUTING_TASKS.md](benchmark/CONTRIBUTING_TASKS.md)
 - Code of Conduct: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - License: [LICENSE](LICENSE)
