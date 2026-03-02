@@ -1,44 +1,23 @@
 # Brain Researcher
 
-**Ask a neuro question. Get a reproducible result.**
-
 [Visit Brain Researcher](https://brain-researcher.com) | [Issues](https://github.com/zjc062/brain-researcher-public/issues) | [Discussions](https://github.com/zjc062/brain-researcher-public/discussions)
 
-Brain Researcher is an open-source neuroimaging AI agent for researchers and developers who want to move from research intent to auditable workflows.
+Brain Researcher is an open neuroimaging assistant for researchers and developers who want to move from research intent to auditable workflows.
 
 Instead of relying on free-form code generation, Brain Researcher uses schema-constrained planning and a curated tool catalog to reduce execution errors and improve reproducibility.
 
 ## What It Does
 
 - Helps users plan analyses in plain language.
-- Grounds concepts and hypotheses using NeuroKG (task, region, disease, method relationships).
 - Turns plans into explicit workflow node chains (DAG-style pipelines).
 - Tracks parameters, tool versions, and run artifacts for review.
 - Supports both Web UI workflows and IDE-based MCP workflows.
 
 ## How It Works (High Level)
 
-1. Agent planning layer: a planner agent converts user intent into a workflow plan instead of writing free-form scripts.
-2. Knowledge grounding layer: NeuroKG is queried to structure concepts (tasks, regions, diseases, methods) and support better hypothesis/planning decisions.
-3. Workflow compiler layer: the agent selects from a curated tool catalog and builds a DAG-style node chain.
-4. Contract validation layer: tool input/output schemas are checked before execution to reduce payload/parameter mismatches.
-5. Execution layer: the same backend executes through Web Studio and MCP (Codex/Cursor/Claude Code) with traceable runs.
-
-## Data Flow (Intent -> Run)
-
-1. User provides intent, constraints, and dataset context.
-2. Agent grounds key concepts with NeuroKG.
-3. Agent compiles an executable node chain from validated tools.
-4. Schema checks verify node-to-node compatibility.
-5. Run executes and emits artifacts, logs, and parameters for audit/review.
-
-## Current Status
-
-As of March 2, 2026, Brain Researcher is in a hardening phase:
-
-- Core surfaces are live (Studio, Library, Benchmark, NeuroKG, Hypothesis, MCP bridge).
-- Main work is reliability, scientific rigor, and review quality.
-- Current priorities are tracked in concrete issues below.
+1. Grounding with NeuroKG: uses a knowledge graph to structure concepts (tasks, regions, diseases, methods) and improve planning quality.
+2. Schema-constrained workflow planning: selects from validated tools and checks input/output compatibility before execution.
+3. Execution via MCP bridge: exposes the same backend in Codex/Cursor/Claude Code through contract-aware tool invocation.
 
 ## Architecture At A Glance
 
@@ -66,30 +45,32 @@ As of March 2, 2026, Brain Researcher is in a hardening phase:
 3. Submit via issue forms.
 4. Maintainers triage and ship fixes.
 
-## 5-Minute Contributor Quickstart
+## Where Reviewers Get Context
+
+1. Start with [REVIEW_PLAYBOOK.md](REVIEW_PLAYBOOK.md) for click-by-click review steps and reporting format.
+2. Use the `Review Tracks` table below to choose one lane and open the matching issue form.
+3. Use the `Suggested priority entry points` under `Review Tracks` to start with high-impact lanes.
+4. Use [CONTRIBUTING.md](CONTRIBUTING.md) for policy, labels, and reporting standards.
+5. For benchmark authoring specifics, use [benchmark/CONTRIBUTING_TASKS.md](benchmark/CONTRIBUTING_TASKS.md).
+
+## Contributor Quickstart
 
 1. Open [brain-researcher.com](https://brain-researcher.com).
-2. Pick one review track from the table below.
-3. Follow [REVIEW_PLAYBOOK.md](REVIEW_PLAYBOOK.md).
+2. Pick one review track from the table below (or start with `02-workflow-review`, `07-studio-blocked`, or `06-mcp-integration`).
+3. Follow the exact click path in [REVIEW_PLAYBOOK.md](REVIEW_PLAYBOOK.md).
 4. File one issue with exact IDs, expected vs actual behavior, and a concrete fix suggestion.
 
 If credits block execution tests, top up in `Settings` at `https://brain-researcher.com/settings`.
 
-## Priority Backlog
-
-Source of truth is GitHub Issues.
-
-| Priority | Theme | Concrete issues |
-| --- | --- | --- |
-| P0 | MCP runtime and privacy hardening | [#2](https://github.com/zjc062/brain-researcher-public/issues/2), [#5](https://github.com/zjc062/brain-researcher-public/issues/5) |
-| P0 | Studio verify guardrails and validation | [#6](https://github.com/zjc062/brain-researcher-public/issues/6), [#7](https://github.com/zjc062/brain-researcher-public/issues/7), [#8](https://github.com/zjc062/brain-researcher-public/issues/8), [#9](https://github.com/zjc062/brain-researcher-public/issues/9) |
-| P1 | NeuroKG query/curation/scoring quality | [#3](https://github.com/zjc062/brain-researcher-public/issues/3), [#4](https://github.com/zjc062/brain-researcher-public/issues/4), [#10](https://github.com/zjc062/brain-researcher-public/issues/10) |
-| P1 | Open architecture decisions | [#11](https://github.com/zjc062/brain-researcher-public/issues/11), [#12](https://github.com/zjc062/brain-researcher-public/issues/12), [#13](https://github.com/zjc062/brain-researcher-public/issues/13), [#14](https://github.com/zjc062/brain-researcher-public/issues/14) |
-| P1-P2 | Workflow, hypothesis, dataset, docs lanes | [Open issue forms](https://github.com/zjc062/brain-researcher-public/issues/new/choose) |
-
-Benchmark-only backlog: [benchmark/TODO.md](benchmark/TODO.md)
-
 ## Review Tracks
+
+Suggested priority entry points:
+
+- MCP runtime/privacy: [#2](https://github.com/zjc062/brain-researcher-public/issues/2), [#5](https://github.com/zjc062/brain-researcher-public/issues/5)
+- Studio validation/guardrails: [#6](https://github.com/zjc062/brain-researcher-public/issues/6), [#7](https://github.com/zjc062/brain-researcher-public/issues/7), [#8](https://github.com/zjc062/brain-researcher-public/issues/8), [#9](https://github.com/zjc062/brain-researcher-public/issues/9)
+- NeuroKG query/curation/scoring: [#3](https://github.com/zjc062/brain-researcher-public/issues/3), [#4](https://github.com/zjc062/brain-researcher-public/issues/4), [#10](https://github.com/zjc062/brain-researcher-public/issues/10)
+- Architecture open questions: [#11](https://github.com/zjc062/brain-researcher-public/issues/11), [#12](https://github.com/zjc062/brain-researcher-public/issues/12), [#13](https://github.com/zjc062/brain-researcher-public/issues/13), [#14](https://github.com/zjc062/brain-researcher-public/issues/14)
+- Benchmark-only backlog: [benchmark/TODO.md](benchmark/TODO.md)
 
 | Review track | Where to click | Issue form |
 | --- | --- | --- |
