@@ -1,0 +1,1010 @@
+{
+  "summary": {
+    "generated_at_utc": "2026-03-02T07:51:12Z",
+    "source_harbor_root": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor",
+    "target_benchmark_root": "/home/zijiaochen/projects/brain-researcher-public/benchmark",
+    "copied_task_count": 95,
+    "source_task_count": 95,
+    "codebench_json_task_count": 95,
+    "source_vs_json_set_match": true,
+    "target_vs_json_set_match": true,
+    "missing_in_source": [],
+    "unexpected_in_source": [],
+    "missing_in_target": [],
+    "unexpected_in_target": [],
+    "missing_required_files_task_count": 0,
+    "json_parse_error_count": 0,
+    "residual_cache_hit_count": 0
+  },
+  "required_files": [
+    "instruction.md",
+    "task.toml",
+    "environment/Dockerfile",
+    "solution/solve.sh",
+    "tests/test.sh",
+    "tests/test_outputs.py"
+  ],
+  "json_files": [
+    {
+      "name": "neuroimage-code-bench.harbor.json",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor_json/neuroimage-code-bench.harbor.json",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/harbor_json/neuroimage-code-bench.harbor.json",
+      "sha256": "befba1284b7a8178db446042615867aa018d29ccc27b3ada487db86611abc6b7",
+      "parsed_ok": true,
+      "task_count": 95
+    },
+    {
+      "name": "neuroimage-theory-bench.harbor.json",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor_json/neuroimage-theory-bench.harbor.json",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/harbor_json/neuroimage-theory-bench.harbor.json",
+      "sha256": "5941d81e68085982bc6b6afdd013927aa36a9a3dafe3894a2d3e38be9531577f",
+      "parsed_ok": true,
+      "task_count": 137
+    },
+    {
+      "name": "neuroimage-theory-rubric.harbor.json",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor_json/neuroimage-theory-rubric.harbor.json",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/harbor_json/neuroimage-theory-rubric.harbor.json",
+      "sha256": "5556d30799cdc88e168f4a8de9c118c47de30a25ffb81b791797454f5e0c0e9f",
+      "parsed_ok": true,
+      "task_count": 94
+    }
+  ],
+  "tasks": [
+    {
+      "task_id": "CLIN-005",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/CLIN-005",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/CLIN-005",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 899,
+      "source_task_toml_sha256": "539a2bdcb59162f375f3c49c5b9b2f95ed48064ac293a57e29fcab6ba4348d97",
+      "target_task_toml_sha256": "539a2bdcb59162f375f3c49c5b9b2f95ed48064ac293a57e29fcab6ba4348d97"
+    },
+    {
+      "task_id": "CLIN-006",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/CLIN-006",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/CLIN-006",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 8,
+      "source_task_toml_sha256": "4ee68ffa7d4880f174eb34bbbec5170c3c094b4db38513bad567b35b50cb2b41",
+      "target_task_toml_sha256": "4ee68ffa7d4880f174eb34bbbec5170c3c094b4db38513bad567b35b50cb2b41"
+    },
+    {
+      "task_id": "CLIN-014",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/CLIN-014",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/CLIN-014",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "2cb4efe1ddae02ece091b19ca8d425daf558f5fb27a4e9b44a99ff3f065c95ea",
+      "target_task_toml_sha256": "2cb4efe1ddae02ece091b19ca8d425daf558f5fb27a4e9b44a99ff3f065c95ea"
+    },
+    {
+      "task_id": "CONN-001",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/CONN-001",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/CONN-001",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 35,
+      "source_task_toml_sha256": "836a20c65ab30bbc22ec844e472d8800cdf6c25f418ae9eecfe9ff1a9d621c2c",
+      "target_task_toml_sha256": "836a20c65ab30bbc22ec844e472d8800cdf6c25f418ae9eecfe9ff1a9d621c2c"
+    },
+    {
+      "task_id": "CONN-002",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/CONN-002",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/CONN-002",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 29,
+      "source_task_toml_sha256": "5ad10765fd5e62518447644ee082eedcde01841efff6056dcf37c6db28f7d88e",
+      "target_task_toml_sha256": "5ad10765fd5e62518447644ee082eedcde01841efff6056dcf37c6db28f7d88e"
+    },
+    {
+      "task_id": "CONN-007",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/CONN-007",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/CONN-007",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 36,
+      "source_task_toml_sha256": "d6f57f742ab2272e1d8716aad9be4e7902bfc6ab3b2f38073cfc42b1ca4d751f",
+      "target_task_toml_sha256": "d6f57f742ab2272e1d8716aad9be4e7902bfc6ab3b2f38073cfc42b1ca4d751f"
+    },
+    {
+      "task_id": "CONN-012",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/CONN-012",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/CONN-012",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 42,
+      "source_task_toml_sha256": "40c9b8dd444ed07614d687bd9718043423333fed5cedaed104eeca809db2144a",
+      "target_task_toml_sha256": "40c9b8dd444ed07614d687bd9718043423333fed5cedaed104eeca809db2144a"
+    },
+    {
+      "task_id": "DATA-001",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/DATA-001",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/DATA-001",
+      "copied_files_count": 10,
+      "source_non_excluded_files_count": 10,
+      "excluded_cache_files_count": 8,
+      "source_task_toml_sha256": "77b2f974c26b582d1224400a0ca2919387d3b81402bd70f883e1088905dbf743",
+      "target_task_toml_sha256": "77b2f974c26b582d1224400a0ca2919387d3b81402bd70f883e1088905dbf743"
+    },
+    {
+      "task_id": "DATA-002",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/DATA-002",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/DATA-002",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "e3660b500c28f44551bb5e42b3cc2920c1bb8beb15f06611b11b5dd905755c52",
+      "target_task_toml_sha256": "e3660b500c28f44551bb5e42b3cc2920c1bb8beb15f06611b11b5dd905755c52"
+    },
+    {
+      "task_id": "DATA-007",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/DATA-007",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/DATA-007",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "c3f38a1d732ef9f8d6c468242241f1ebb0b83b8f2180f1e2c828003cb101e392",
+      "target_task_toml_sha256": "c3f38a1d732ef9f8d6c468242241f1ebb0b83b8f2180f1e2c828003cb101e392"
+    },
+    {
+      "task_id": "DATA-016",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/DATA-016",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/DATA-016",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "72ec56f31a5509c590e4f6a34aa83096a20d0515838b6546b4be8b59248104f0",
+      "target_task_toml_sha256": "72ec56f31a5509c590e4f6a34aa83096a20d0515838b6546b4be8b59248104f0"
+    },
+    {
+      "task_id": "DATA-017",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/DATA-017",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/DATA-017",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "a59750a11be0e4a7e8868bdd4dc33a831cc614d803b155c8ba27a345fd3857d6",
+      "target_task_toml_sha256": "a59750a11be0e4a7e8868bdd4dc33a831cc614d803b155c8ba27a345fd3857d6"
+    },
+    {
+      "task_id": "DIFF-001",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/DIFF-001",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/DIFF-001",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 8,
+      "source_task_toml_sha256": "556dcc20c81b2737b8d16f38319c6db1ba0d4d713e6e05f22130435890661642",
+      "target_task_toml_sha256": "556dcc20c81b2737b8d16f38319c6db1ba0d4d713e6e05f22130435890661642"
+    },
+    {
+      "task_id": "DIFF-002",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/DIFF-002",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/DIFF-002",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "26d7c87b777dd792473aa183dddf10b69115421a742b3098ddb62cfed5786495",
+      "target_task_toml_sha256": "26d7c87b777dd792473aa183dddf10b69115421a742b3098ddb62cfed5786495"
+    },
+    {
+      "task_id": "DIFF-005",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/DIFF-005",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/DIFF-005",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 8,
+      "source_task_toml_sha256": "feabc8ffed838295209458c9202b4c86ce50a7072358a6a86918f21be2393ff2",
+      "target_task_toml_sha256": "feabc8ffed838295209458c9202b4c86ce50a7072358a6a86918f21be2393ff2"
+    },
+    {
+      "task_id": "DIFF-011",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/DIFF-011",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/DIFF-011",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "d31f3f3f32c8387bd3a14516e8ab6c4625a6f6843effc7f3a53cb8f634fc429a",
+      "target_task_toml_sha256": "d31f3f3f32c8387bd3a14516e8ab6c4625a6f6843effc7f3a53cb8f634fc429a"
+    },
+    {
+      "task_id": "DL-001",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/DL-001",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/DL-001",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 11,
+      "source_task_toml_sha256": "b4fed62370ed38d17e2c05330124fbce094c00ee1792cbce7ea4b45aac22a23e",
+      "target_task_toml_sha256": "b4fed62370ed38d17e2c05330124fbce094c00ee1792cbce7ea4b45aac22a23e"
+    },
+    {
+      "task_id": "DL-002",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/DL-002",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/DL-002",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "d041e5d1c211122419c9d69f6b55f7564aaa123797e3cac611104d6242535fb5",
+      "target_task_toml_sha256": "d041e5d1c211122419c9d69f6b55f7564aaa123797e3cac611104d6242535fb5"
+    },
+    {
+      "task_id": "DL-004",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/DL-004",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/DL-004",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 28,
+      "source_task_toml_sha256": "b814688de88098d64701781d9d82d4d82b496c635ce79096f786506eac98c1f2",
+      "target_task_toml_sha256": "b814688de88098d64701781d9d82d4d82b496c635ce79096f786506eac98c1f2"
+    },
+    {
+      "task_id": "DL-006",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/DL-006",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/DL-006",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "4a4140a7f508eef2204105abb9b163276866827b3d1fbdc6bce53e7fd416a7ea",
+      "target_task_toml_sha256": "4a4140a7f508eef2204105abb9b163276866827b3d1fbdc6bce53e7fd416a7ea"
+    },
+    {
+      "task_id": "DL-015",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/DL-015",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/DL-015",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 51,
+      "source_task_toml_sha256": "e2d959ca6de765c58da93ce64f8d11929a02cc87cc13ec084dfdbb5a870f94c9",
+      "target_task_toml_sha256": "e2d959ca6de765c58da93ce64f8d11929a02cc87cc13ec084dfdbb5a870f94c9"
+    },
+    {
+      "task_id": "ELEC-001",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/ELEC-001",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/ELEC-001",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "67704e0490668727101bf6dfb6fcfe325437da3014b3bdad3aa163f20c2b5442",
+      "target_task_toml_sha256": "67704e0490668727101bf6dfb6fcfe325437da3014b3bdad3aa163f20c2b5442"
+    },
+    {
+      "task_id": "ELEC-002",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/ELEC-002",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/ELEC-002",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "1371c5fb8df4bdac2557a1ec8dd6590c09a1b1ed1ad3281f2110d952bfb00f98",
+      "target_task_toml_sha256": "1371c5fb8df4bdac2557a1ec8dd6590c09a1b1ed1ad3281f2110d952bfb00f98"
+    },
+    {
+      "task_id": "ELEC-003",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/ELEC-003",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/ELEC-003",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "355abec00706d0cdf51d49fadf54e89103beadcef2d6973b7e691fafb9ce5904",
+      "target_task_toml_sha256": "355abec00706d0cdf51d49fadf54e89103beadcef2d6973b7e691fafb9ce5904"
+    },
+    {
+      "task_id": "ELEC-004",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/ELEC-004",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/ELEC-004",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "7e08f9c8379b3b257f09d32efc703c719e4151ca3aec17e767812fa448ac1d75",
+      "target_task_toml_sha256": "7e08f9c8379b3b257f09d32efc703c719e4151ca3aec17e767812fa448ac1d75"
+    },
+    {
+      "task_id": "ELEC-005",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/ELEC-005",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/ELEC-005",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "ec3532ca0f7229ac7f54cced9842cb86954113e3d765af695f56b9ec1869e532",
+      "target_task_toml_sha256": "ec3532ca0f7229ac7f54cced9842cb86954113e3d765af695f56b9ec1869e532"
+    },
+    {
+      "task_id": "HARM-001",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/HARM-001",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/HARM-001",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "9941a1eaccd3761ef538eec2c61d1457fda1959abd91aa1b1e880b111a32b185",
+      "target_task_toml_sha256": "9941a1eaccd3761ef538eec2c61d1457fda1959abd91aa1b1e880b111a32b185"
+    },
+    {
+      "task_id": "HARM-009",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/HARM-009",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/HARM-009",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "6a89aebce243c06e0d845c3110ce1d23eb8066c61f9cb36c3ecf022e82d5c12e",
+      "target_task_toml_sha256": "6a89aebce243c06e0d845c3110ce1d23eb8066c61f9cb36c3ecf022e82d5c12e"
+    },
+    {
+      "task_id": "HARM-010",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/HARM-010",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/HARM-010",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "5934c264fa4bc4824067c874863daabb415e8fb493446342862e5c0f42bfcdd4",
+      "target_task_toml_sha256": "5934c264fa4bc4824067c874863daabb415e8fb493446342862e5c0f42bfcdd4"
+    },
+    {
+      "task_id": "KG-001",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/KG-001",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/KG-001",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "c97d4c38723c38edeb890f0d1757f74ed1757d978d1fb94371c5a51f7cb5dbce",
+      "target_task_toml_sha256": "c97d4c38723c38edeb890f0d1757f74ed1757d978d1fb94371c5a51f7cb5dbce"
+    },
+    {
+      "task_id": "KG-002",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/KG-002",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/KG-002",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "f529c118feefaf441fa149be303c3b85a886d632c07d0bc31bf7a044f9cc2067",
+      "target_task_toml_sha256": "f529c118feefaf441fa149be303c3b85a886d632c07d0bc31bf7a044f9cc2067"
+    },
+    {
+      "task_id": "KG-004",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/KG-004",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/KG-004",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "d6de8967d2db7c327e4e93a2a4a911bf14a7c86e8ba86fc45557e07ba8106767",
+      "target_task_toml_sha256": "d6de8967d2db7c327e4e93a2a4a911bf14a7c86e8ba86fc45557e07ba8106767"
+    },
+    {
+      "task_id": "KG-005",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/KG-005",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/KG-005",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "ac6a22ffa0bed820bfc3cb8f6cbf030223a17e6d6f6a3c92a25b8d3a61093227",
+      "target_task_toml_sha256": "ac6a22ffa0bed820bfc3cb8f6cbf030223a17e6d6f6a3c92a25b8d3a61093227"
+    },
+    {
+      "task_id": "META-001",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/META-001",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/META-001",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "2584b3b0269a8e51bd267fe82a9febe5b09712aaf2c738238f8a5483eac147b6",
+      "target_task_toml_sha256": "2584b3b0269a8e51bd267fe82a9febe5b09712aaf2c738238f8a5483eac147b6"
+    },
+    {
+      "task_id": "META-007",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/META-007",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/META-007",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "82e88bd855f2db62ed19c52fccf7e44f4f76d37ed3b319c3d4023f49ac69b0c3",
+      "target_task_toml_sha256": "82e88bd855f2db62ed19c52fccf7e44f4f76d37ed3b319c3d4023f49ac69b0c3"
+    },
+    {
+      "task_id": "META-012",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/META-012",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/META-012",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "07f9fdf26b0d961a0eabd237d5fd0161493242898e14b018b5222b04e23d1a1a",
+      "target_task_toml_sha256": "07f9fdf26b0d961a0eabd237d5fd0161493242898e14b018b5222b04e23d1a1a"
+    },
+    {
+      "task_id": "ML-001",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/ML-001",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/ML-001",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "9cd83561a2ad8cfb6b09605fbe03469b697869a994f2853a1cddd72dfdd92d1f",
+      "target_task_toml_sha256": "9cd83561a2ad8cfb6b09605fbe03469b697869a994f2853a1cddd72dfdd92d1f"
+    },
+    {
+      "task_id": "ML-004",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/ML-004",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/ML-004",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "13ed864802e691c9abadbd35f176e98d7c0b15f39ae8c86f08d6d29478f6382f",
+      "target_task_toml_sha256": "13ed864802e691c9abadbd35f176e98d7c0b15f39ae8c86f08d6d29478f6382f"
+    },
+    {
+      "task_id": "ML-006",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/ML-006",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/ML-006",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "b46a401d91301f053be89a678da3319826284281132ff29687011e5353cc6cbb",
+      "target_task_toml_sha256": "b46a401d91301f053be89a678da3319826284281132ff29687011e5353cc6cbb"
+    },
+    {
+      "task_id": "ML-012",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/ML-012",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/ML-012",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "138071c77a70e2e0a8441b2c4f476464c95bb584fcd417348be1e5a94b142722",
+      "target_task_toml_sha256": "138071c77a70e2e0a8441b2c4f476464c95bb584fcd417348be1e5a94b142722"
+    },
+    {
+      "task_id": "ML-020",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/ML-020",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/ML-020",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "aed5a2dc6535719c047ac164c7e37779cc56ac100d1ed8e5b541fb3b2234da9e",
+      "target_task_toml_sha256": "aed5a2dc6535719c047ac164c7e37779cc56ac100d1ed8e5b541fb3b2234da9e"
+    },
+    {
+      "task_id": "ML-021",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/ML-021",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/ML-021",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "247e21cfeb409be08417d3c0d853cced818701ac8d23337a7dcfe91f8df52adf",
+      "target_task_toml_sha256": "247e21cfeb409be08417d3c0d853cced818701ac8d23337a7dcfe91f8df52adf"
+    },
+    {
+      "task_id": "OPENNEURO-CONN-002",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/OPENNEURO-CONN-002",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/OPENNEURO-CONN-002",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 11,
+      "source_task_toml_sha256": "31ff1a7e5f1417b71178c25309d4b8b1fe7d12badcf72ea9e9e93dcf7047b49f",
+      "target_task_toml_sha256": "31ff1a7e5f1417b71178c25309d4b8b1fe7d12badcf72ea9e9e93dcf7047b49f"
+    },
+    {
+      "task_id": "OPENNEURO-CONN-003",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/OPENNEURO-CONN-003",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/OPENNEURO-CONN-003",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 11,
+      "source_task_toml_sha256": "35d91eec65ac4d2894128dac0d0ee207891a7f2e2c89627e22c6932c021d1e8e",
+      "target_task_toml_sha256": "35d91eec65ac4d2894128dac0d0ee207891a7f2e2c89627e22c6932c021d1e8e"
+    },
+    {
+      "task_id": "OPENNEURO-CONN-006",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/OPENNEURO-CONN-006",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/OPENNEURO-CONN-006",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 11,
+      "source_task_toml_sha256": "efed689bc07427f0857a4ac268a9ef698531e929d5f8c00a5c4fbb41f42875a1",
+      "target_task_toml_sha256": "efed689bc07427f0857a4ac268a9ef698531e929d5f8c00a5c4fbb41f42875a1"
+    },
+    {
+      "task_id": "OPENNEURO-CONN-008",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/OPENNEURO-CONN-008",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/OPENNEURO-CONN-008",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 11,
+      "source_task_toml_sha256": "7ff5fb6c429a5ebb12aa72503bd88ef6dbe635060add87df345b838f1ba9d9ee",
+      "target_task_toml_sha256": "7ff5fb6c429a5ebb12aa72503bd88ef6dbe635060add87df345b838f1ba9d9ee"
+    },
+    {
+      "task_id": "OPENNEURO-CONN-008_B",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/OPENNEURO-CONN-008_B",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/OPENNEURO-CONN-008_B",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 11,
+      "source_task_toml_sha256": "f05bbb6b7a7d2ae6bad79675104631a5a3f389bcde3581ee2f174e3f2d867a1d",
+      "target_task_toml_sha256": "f05bbb6b7a7d2ae6bad79675104631a5a3f389bcde3581ee2f174e3f2d867a1d"
+    },
+    {
+      "task_id": "OPENNEURO-ML-005",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/OPENNEURO-ML-005",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/OPENNEURO-ML-005",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "91f2b79e1fecf53487e15acc2d8992634456d5e0971394445119ef9b7f040082",
+      "target_task_toml_sha256": "91f2b79e1fecf53487e15acc2d8992634456d5e0971394445119ef9b7f040082"
+    },
+    {
+      "task_id": "OPENNEURO-ML-011",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/OPENNEURO-ML-011",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/OPENNEURO-ML-011",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "458db59e7468d298d09065951e4d9208957243f382a202fc7f1f8608d2a1d368",
+      "target_task_toml_sha256": "458db59e7468d298d09065951e4d9208957243f382a202fc7f1f8608d2a1d368"
+    },
+    {
+      "task_id": "OPENNEURO-ML-012",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/OPENNEURO-ML-012",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/OPENNEURO-ML-012",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "9281d8a35f19ad8a6729585e175717e701e754f2cc776a4fb2bf4cc8bc7485dc",
+      "target_task_toml_sha256": "9281d8a35f19ad8a6729585e175717e701e754f2cc776a4fb2bf4cc8bc7485dc"
+    },
+    {
+      "task_id": "OPENNEURO-QC-003",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/OPENNEURO-QC-003",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/OPENNEURO-QC-003",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "fdfcbf85bf3365fff1787d4b8fa609028e06a98dce0a85ea62d1f6ac4eb3c897",
+      "target_task_toml_sha256": "fdfcbf85bf3365fff1787d4b8fa609028e06a98dce0a85ea62d1f6ac4eb3c897"
+    },
+    {
+      "task_id": "OPENNEURO-QC-010",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/OPENNEURO-QC-010",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/OPENNEURO-QC-010",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "619b61d08a3768010ce05548be08cfe364342e4182d92f514054b702baa7a5d4",
+      "target_task_toml_sha256": "619b61d08a3768010ce05548be08cfe364342e4182d92f514054b702baa7a5d4"
+    },
+    {
+      "task_id": "OPENNEURO-SA-007",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/OPENNEURO-SA-007",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/OPENNEURO-SA-007",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "3bef91840037de0359f6a8d3507c3548ff4d14520f662c6386bd9661861781bb",
+      "target_task_toml_sha256": "3bef91840037de0359f6a8d3507c3548ff4d14520f662c6386bd9661861781bb"
+    },
+    {
+      "task_id": "OPENNEURO-SA-010",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/OPENNEURO-SA-010",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/OPENNEURO-SA-010",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "2a94d67e29d58abfcd9dd85462d8e5a7903afa6561c782ff1ba7e7f56c077222",
+      "target_task_toml_sha256": "2a94d67e29d58abfcd9dd85462d8e5a7903afa6561c782ff1ba7e7f56c077222"
+    },
+    {
+      "task_id": "PREP-002",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/PREP-002",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/PREP-002",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 11,
+      "source_task_toml_sha256": "9f1d42e44cf833e0463212673c98d3f9d11a4dd09a1f144667b8ce00758703f5",
+      "target_task_toml_sha256": "9f1d42e44cf833e0463212673c98d3f9d11a4dd09a1f144667b8ce00758703f5"
+    },
+    {
+      "task_id": "PREP-004",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/PREP-004",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/PREP-004",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 11,
+      "source_task_toml_sha256": "a1d86a78d2f5354a740593b4d50b6f49e45e4da8f813556f5bea9c0933b17104",
+      "target_task_toml_sha256": "a1d86a78d2f5354a740593b4d50b6f49e45e4da8f813556f5bea9c0933b17104"
+    },
+    {
+      "task_id": "PREP-009",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/PREP-009",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/PREP-009",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 11,
+      "source_task_toml_sha256": "c000827ac0a4206ca7e1ad63b377864bb488f813d70ddb3bfb26568a0de47e52",
+      "target_task_toml_sha256": "c000827ac0a4206ca7e1ad63b377864bb488f813d70ddb3bfb26568a0de47e52"
+    },
+    {
+      "task_id": "PREP-010",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/PREP-010",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/PREP-010",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 11,
+      "source_task_toml_sha256": "f50fb3ad1d2554c3c5c5477be70f2af06d7215f4213a7980b6377fa4e86c94c8",
+      "target_task_toml_sha256": "f50fb3ad1d2554c3c5c5477be70f2af06d7215f4213a7980b6377fa4e86c94c8"
+    },
+    {
+      "task_id": "PREP-012",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/PREP-012",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/PREP-012",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 11,
+      "source_task_toml_sha256": "0a85aa8e4a05ddedb059d8034536e2b81c250341b9d6d5898afcc3b4caf4014e",
+      "target_task_toml_sha256": "0a85aa8e4a05ddedb059d8034536e2b81c250341b9d6d5898afcc3b4caf4014e"
+    },
+    {
+      "task_id": "QC-002",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/QC-002",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/QC-002",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "ec2c9e06605986de3cb3f480d0027d183ff8197296a48ee43d2d335b16dd49a3",
+      "target_task_toml_sha256": "ec2c9e06605986de3cb3f480d0027d183ff8197296a48ee43d2d335b16dd49a3"
+    },
+    {
+      "task_id": "QC-003",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/QC-003",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/QC-003",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "1a4d124d50910d969d728646b3fe44988bae4bcfb61fc528915745159e349a10",
+      "target_task_toml_sha256": "1a4d124d50910d969d728646b3fe44988bae4bcfb61fc528915745159e349a10"
+    },
+    {
+      "task_id": "QC-005",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/QC-005",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/QC-005",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "0d8339af38839fbaa914bc944fa16f065b7a51f785cf3d85ebd0b8a2f08c3378",
+      "target_task_toml_sha256": "0d8339af38839fbaa914bc944fa16f065b7a51f785cf3d85ebd0b8a2f08c3378"
+    },
+    {
+      "task_id": "QC-010",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/QC-010",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/QC-010",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "af06ac3f06b8086284ed9298ac31eacbc37ef5c39e0542b486993732d3522380",
+      "target_task_toml_sha256": "af06ac3f06b8086284ed9298ac31eacbc37ef5c39e0542b486993732d3522380"
+    },
+    {
+      "task_id": "QC-014",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/QC-014",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/QC-014",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "5fe1843e03b14c0a49bfe02ed54a343d64e2369a2f3a6c77c2e8f498dd9eeffb",
+      "target_task_toml_sha256": "5fe1843e03b14c0a49bfe02ed54a343d64e2369a2f3a6c77c2e8f498dd9eeffb"
+    },
+    {
+      "task_id": "REG-001",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/REG-001",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/REG-001",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "a4a9b9d255c8bd868278d5ee300aa3bf5d10e2294e425cd74438124abd7991d6",
+      "target_task_toml_sha256": "a4a9b9d255c8bd868278d5ee300aa3bf5d10e2294e425cd74438124abd7991d6"
+    },
+    {
+      "task_id": "REG-002",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/REG-002",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/REG-002",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "490db5728f2f360c52b7063d0528b612f7a5ca7801af34c7d578d89ea71da92e",
+      "target_task_toml_sha256": "490db5728f2f360c52b7063d0528b612f7a5ca7801af34c7d578d89ea71da92e"
+    },
+    {
+      "task_id": "REG-005",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/REG-005",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/REG-005",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "214da66831f8c1de2d4a9a726ca06e1ce34d26dcb2abc5116c61fdf664d158da",
+      "target_task_toml_sha256": "214da66831f8c1de2d4a9a726ca06e1ce34d26dcb2abc5116c61fdf664d158da"
+    },
+    {
+      "task_id": "REG-010",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/REG-010",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/REG-010",
+      "copied_files_count": 8,
+      "source_non_excluded_files_count": 8,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "ac15210f1028d4181658e32ee525b5759c995861b3869cf38a2b4a2671275d41",
+      "target_task_toml_sha256": "ac15210f1028d4181658e32ee525b5759c995861b3869cf38a2b4a2671275d41"
+    },
+    {
+      "task_id": "RT-002",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/RT-002",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/RT-002",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "ab2144a0994f717d6a9e8be29bd746710ca9b9cbb4cbac967b767c5d16461731",
+      "target_task_toml_sha256": "ab2144a0994f717d6a9e8be29bd746710ca9b9cbb4cbac967b767c5d16461731"
+    },
+    {
+      "task_id": "RT-003",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/RT-003",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/RT-003",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "ca0955e1b2d96e4783f623b69353bf0ce92cfa5030ee0f893b72394761160538",
+      "target_task_toml_sha256": "ca0955e1b2d96e4783f623b69353bf0ce92cfa5030ee0f893b72394761160538"
+    },
+    {
+      "task_id": "SEG-001",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/SEG-001",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/SEG-001",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "667467c952f14aaea310565780851e3559bea3b9cce507b27222ee2ddf44a2b0",
+      "target_task_toml_sha256": "667467c952f14aaea310565780851e3559bea3b9cce507b27222ee2ddf44a2b0"
+    },
+    {
+      "task_id": "SEG-002",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/SEG-002",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/SEG-002",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "59a5d7cc08a084cab86a02addfc26ecdcb79133df8a612ba1551557f917d4805",
+      "target_task_toml_sha256": "59a5d7cc08a084cab86a02addfc26ecdcb79133df8a612ba1551557f917d4805"
+    },
+    {
+      "task_id": "SEG-004",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/SEG-004",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/SEG-004",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "58beaad19ebf4ac1817bb27efcc565d4dad0899aee78fcafbc96918e2a96cbe9",
+      "target_task_toml_sha256": "58beaad19ebf4ac1817bb27efcc565d4dad0899aee78fcafbc96918e2a96cbe9"
+    },
+    {
+      "task_id": "SEG-005",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/SEG-005",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/SEG-005",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "33754d241672a1cdd287ea7fecf566b72d15f9198a166cdd5ac4f755b1fabde8",
+      "target_task_toml_sha256": "33754d241672a1cdd287ea7fecf566b72d15f9198a166cdd5ac4f755b1fabde8"
+    },
+    {
+      "task_id": "SPEC-001",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/SPEC-001",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/SPEC-001",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "44ddeeb24a8e3cf1d703c9d69f581559791784c21d679189ab12e51a1e73c296",
+      "target_task_toml_sha256": "44ddeeb24a8e3cf1d703c9d69f581559791784c21d679189ab12e51a1e73c296"
+    },
+    {
+      "task_id": "SPEC-007",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/SPEC-007",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/SPEC-007",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "6c489f3e395c6ae486d1ac38bc6b87098018630afdfcb7cec6604c1bfc4c7ea9",
+      "target_task_toml_sha256": "6c489f3e395c6ae486d1ac38bc6b87098018630afdfcb7cec6604c1bfc4c7ea9"
+    },
+    {
+      "task_id": "SPEC-012",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/SPEC-012",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/SPEC-012",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "0bb64d867772866fec6d325beb05e6f488607fbe6cbe7a97db6f352b7376da0d",
+      "target_task_toml_sha256": "0bb64d867772866fec6d325beb05e6f488607fbe6cbe7a97db6f352b7376da0d"
+    },
+    {
+      "task_id": "SPEC-016",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/SPEC-016",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/SPEC-016",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "fd99edbd063230e23e79bdd6cb465931b2a304d8577cfc84eb0f1fe76263fcdd",
+      "target_task_toml_sha256": "fd99edbd063230e23e79bdd6cb465931b2a304d8577cfc84eb0f1fe76263fcdd"
+    },
+    {
+      "task_id": "STAT-001",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/STAT-001",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/STAT-001",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "b09466b15b838d762bc067d41a7a11ff33f93a6ef7637e37025cc9f0c67f56f8",
+      "target_task_toml_sha256": "b09466b15b838d762bc067d41a7a11ff33f93a6ef7637e37025cc9f0c67f56f8"
+    },
+    {
+      "task_id": "STAT-002",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/STAT-002",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/STAT-002",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "d98ab1e374595c8234397590d5f03f16fb5518a9feae181cd174940772b5ed34",
+      "target_task_toml_sha256": "d98ab1e374595c8234397590d5f03f16fb5518a9feae181cd174940772b5ed34"
+    },
+    {
+      "task_id": "STAT-006",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/STAT-006",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/STAT-006",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "1c51f970ed439c351f754f2ce1ac906b4f0d577286e1d42ef861fda25a4e58b9",
+      "target_task_toml_sha256": "1c51f970ed439c351f754f2ce1ac906b4f0d577286e1d42ef861fda25a4e58b9"
+    },
+    {
+      "task_id": "STAT-007",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/STAT-007",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/STAT-007",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "d0530b89d107dd1a73216163ad4c26b309b0eac65526fe1855b82dcee1310022",
+      "target_task_toml_sha256": "d0530b89d107dd1a73216163ad4c26b309b0eac65526fe1855b82dcee1310022"
+    },
+    {
+      "task_id": "STAT-012",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/STAT-012",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/STAT-012",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "e576a2b846385db0592cbcf1dd629c8457035e688f1fa6d7d3d5aed9ce2364b2",
+      "target_task_toml_sha256": "e576a2b846385db0592cbcf1dd629c8457035e688f1fa6d7d3d5aed9ce2364b2"
+    },
+    {
+      "task_id": "STATINF-001",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/STATINF-001",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/STATINF-001",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "7089001e9c09818319a47bde448fd9acf8347789d89230bde3815385cc40c8af",
+      "target_task_toml_sha256": "7089001e9c09818319a47bde448fd9acf8347789d89230bde3815385cc40c8af"
+    },
+    {
+      "task_id": "STATINF-006",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/STATINF-006",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/STATINF-006",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "fe7533efb9e61dc30f6fe1183e41abaaf4ad68ebf9b7f2c203d6c0ef5a91a6b8",
+      "target_task_toml_sha256": "fe7533efb9e61dc30f6fe1183e41abaaf4ad68ebf9b7f2c203d6c0ef5a91a6b8"
+    },
+    {
+      "task_id": "STATINF-012",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/STATINF-012",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/STATINF-012",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "b71f51b81fa975723b98788733c53a941abcc629a627658739bab4de82702a47",
+      "target_task_toml_sha256": "b71f51b81fa975723b98788733c53a941abcc629a627658739bab4de82702a47"
+    },
+    {
+      "task_id": "SURF-004",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/SURF-004",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/SURF-004",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "6d656aad3426e9bb2dd8440e901ce6e60143bb5c7391e2b3d495175192a443af",
+      "target_task_toml_sha256": "6d656aad3426e9bb2dd8440e901ce6e60143bb5c7391e2b3d495175192a443af"
+    },
+    {
+      "task_id": "SURF-006",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/SURF-006",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/SURF-006",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "1a18926d6ae05694b14d06f5b3910e58eb0f69f2a197765ed96f8d02e5dab702",
+      "target_task_toml_sha256": "1a18926d6ae05694b14d06f5b3910e58eb0f69f2a197765ed96f8d02e5dab702"
+    },
+    {
+      "task_id": "SURF-012",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/SURF-012",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/SURF-012",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "9793e1d82ba6ee889a7a0de6d280f6125a2465bcee5260b19e94f8d1c7844a1a",
+      "target_task_toml_sha256": "9793e1d82ba6ee889a7a0de6d280f6125a2465bcee5260b19e94f8d1c7844a1a"
+    },
+    {
+      "task_id": "VIZ-002",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/VIZ-002",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/VIZ-002",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "a31cabca477d30a8b17ab6502a8b69d85018315c58d2af87e8bb1a64b9334fc7",
+      "target_task_toml_sha256": "a31cabca477d30a8b17ab6502a8b69d85018315c58d2af87e8bb1a64b9334fc7"
+    },
+    {
+      "task_id": "VIZ-003",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/VIZ-003",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/VIZ-003",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "8757de8073edbc074cfbc1b49cf1feb52239299a37fd77bbe0393b52f2e990c2",
+      "target_task_toml_sha256": "8757de8073edbc074cfbc1b49cf1feb52239299a37fd77bbe0393b52f2e990c2"
+    },
+    {
+      "task_id": "VIZ-004",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/VIZ-004",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/VIZ-004",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "63f5af3e7de34b181be4b160f43709c5d586b882e412108478a7225e1999c0c8",
+      "target_task_toml_sha256": "63f5af3e7de34b181be4b160f43709c5d586b882e412108478a7225e1999c0c8"
+    },
+    {
+      "task_id": "VIZ-010",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/VIZ-010",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/VIZ-010",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "01dc6954ed98c5835baaa0284ceb4a9cfb948e8e3fbc10f534b12bc2295194c3",
+      "target_task_toml_sha256": "01dc6954ed98c5835baaa0284ceb4a9cfb948e8e3fbc10f534b12bc2295194c3"
+    },
+    {
+      "task_id": "WORK-001",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/WORK-001",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/WORK-001",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 7,
+      "source_task_toml_sha256": "1632dd7919101fdaa0243f9931384a762a2f3b9001f3eec4c641cb2ab581463d",
+      "target_task_toml_sha256": "1632dd7919101fdaa0243f9931384a762a2f3b9001f3eec4c641cb2ab581463d"
+    },
+    {
+      "task_id": "WORK-002",
+      "source_path": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor/WORK-002",
+      "target_path": "/home/zijiaochen/projects/brain-researcher-public/benchmark/tasks/codebench/WORK-002",
+      "copied_files_count": 7,
+      "source_non_excluded_files_count": 7,
+      "excluded_cache_files_count": 6,
+      "source_task_toml_sha256": "70e12983fd769f982fb7172cd5025ab88b1bd6873d889495d158694c39bf3c82",
+      "target_task_toml_sha256": "70e12983fd769f982fb7172cd5025ab88b1bd6873d889495d158694c39bf3c82"
+    }
+  ],
+  "validation": {
+    "missing_required_files": {},
+    "json_parse_errors": {},
+    "residual_cache_hits": []
+  }
+}

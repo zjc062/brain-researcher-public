@@ -1,0 +1,20 @@
+{
+  "summary": {
+    "generated_at_utc": "2026-03-02T07:51:12Z",
+    "source_harbor_root": "/home/zijiaochen/projects/brain_researcher_benchmark/harbor",
+    "target_benchmark_root": "/home/zijiaochen/projects/brain-researcher-public/benchmark",
+    "copied_task_count": 95,
+    "source_task_count": 95,
+    "codebench_json_task_count": 95,
+    "source_vs_json_set_match": true,
+    "target_vs_json_set_match": true,
+    "missing_in_source": [],
+    "unexpected_in_source": [],
+    "missing_in_target": [],
+    "unexpected_in_target": [],
+    "missing_required_files_task_count": 0,
+    "json_parse_error_count": 0,
+    "residual_cache_hit_count": 0
+  },
+  "ok": true
+}
