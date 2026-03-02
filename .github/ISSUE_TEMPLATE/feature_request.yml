@@ -1,0 +1,88 @@
+name: Feature request
+description: Suggest a new capability, workflow improvement, or missing tool/data addition
+title: "[Feature]: "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing an improvement.
+        Requests with clear scientific value and acceptance criteria are prioritized.
+
+  - type: input
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What user or scientific pain point are you trying to solve?
+      placeholder: Current workflows cannot represent X without manual post-processing.
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe the desired behavior or capability.
+    validations:
+      required: true
+
+  - type: textarea
+    id: rationale
+    attributes:
+      label: Scientific or technical rationale
+      description: Why this change matters for rigor, reproducibility, or usability.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Existing workaround or other options.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: What concrete result would make this complete?
+      placeholder: |
+        - [ ] New tool appears in catalog
+        - [ ] Pipeline validates schema
+        - [ ] Benchmark case X passes
+    validations:
+      required: true
+
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impacted area
+      options:
+        - Workflow defaults
+        - Benchmark definitions
+        - NeuroKG reasoning
+        - Hypothesis Explorer
+        - Studio UX
+        - MCP bridge
+        - Dataset/tool catalog
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Links, papers, example workflows, or dataset references.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Privacy and safety checks
+      options:
+        - label: I confirm this request does not include PHI, secrets, or private credentials.
+          required: true
+
