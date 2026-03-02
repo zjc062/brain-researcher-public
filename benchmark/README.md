@@ -32,3 +32,7 @@ Phase A includes:
 ## Contribute Benchmark Tasks
 
 Use `benchmark/CONTRIBUTING_TASKS.md` for task authoring rules, validation commands, and PR checklist requirements for benchmark changes.
+
+## Benchmark Backlog
+
+Use `benchmark/TODO.md` for benchmark-specific TODO tracking. Source of truth remains GitHub Issues.

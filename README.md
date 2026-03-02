@@ -43,6 +43,35 @@ We are in a hardening phase and need reviewer feedback across methods, UX, KG qu
 1. Product and scientific review lane: use [REVIEW_PLAYBOOK.md](REVIEW_PLAYBOOK.md) and submit via issue forms.
 2. Benchmark task authoring lane: use [benchmark/CONTRIBUTING_TASKS.md](benchmark/CONTRIBUTING_TASKS.md) for `benchmark/tasks/codebench/**` changes.
 
+## MCP Setup (Quick)
+
+Use maintainer-provided MCP endpoint and token. Do not commit credentials.
+
+1. Set your token locally:
+
+```bash
+export BRAIN_RESEARCHER_MCP_TOKEN="<your_token>"
+```
+
+2. Add a server named `brain_researcher_mcp` in your IDE MCP config (template):
+
+```json
+{
+  "mcpServers": {
+    "brain_researcher_mcp": {
+      "url": "<MCP_ENDPOINT>",
+      "headers": {
+        "Authorization": "Bearer ${BRAIN_RESEARCHER_MCP_TOKEN}"
+      }
+    }
+  }
+}
+```
+
+3. Reload your IDE MCP connectors.
+4. Run a smoke test prompt, for example:
+`use brain_researcher_mcp to search tools for resting-state connectivity`.
+
 ## 5-Minute Contributor Quickstart
 
 1. Open [brain-researcher.com](https://brain-researcher.com).
@@ -52,6 +81,24 @@ We are in a hardening phase and need reviewer feedback across methods, UX, KG qu
 5. Include IDs, expected vs actual behavior, and a concrete fix suggestion.
 
 If credits block execution tests, you can top up in `Settings` at `https://brain-researcher.com/settings`.
+
+## TODO Dashboard
+
+Authoritative source of truth is GitHub Issues (assignable, triageable, closable).
+
+- Global TODO overview: this section.
+- Benchmark-specific backlog: [benchmark/TODO.md](benchmark/TODO.md).
+- Rule: open/update issue first, then add the issue link here.
+
+| Priority | Area | TODO | Issue |
+| --- | --- | --- | --- |
+| P0 | `area/mcp` | Stabilize tool search/schema/execution + safety boundary regressions | [Open MCP issues](https://github.com/zjc062/brain-researcher-public/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fmcp) |
+| P0 | `area/studio` | Reduce Verify blocked loops with clearer unblock guidance | [Open Studio issues](https://github.com/zjc062/brain-researcher-public/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fstudio) |
+| P0 | `area/workflow` | Harden default parameters and node ordering in official workflows | [Open Workflow issues](https://github.com/zjc062/brain-researcher-public/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fworkflow) |
+| P1 | `area/neurokg` | Clean noisy edges/definitions and improve multihop quality | [Open NeuroKG issues](https://github.com/zjc062/brain-researcher-public/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fneurokg) |
+| P1 | `area/hypothesis` | Improve novelty/factual quality and reduce predictive-model bias | [Open Hypothesis issues](https://github.com/zjc062/brain-researcher-public/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fhypothesis) |
+| P1 | `area/datasets` | Increase dataset coverage and metadata completeness | [Open Dataset issues](https://github.com/zjc062/brain-researcher-public/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fdatasets) |
+| P2 | `area/docs` | Improve docs/demo reproducibility and first-run onboarding | [Open Docs issues](https://github.com/zjc062/brain-researcher-public/issues?q=is%3Aissue+is%3Aopen+label%3Aarea%2Fdocs) |
 
 ## Review Tracks
 
