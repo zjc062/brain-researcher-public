@@ -1,0 +1,17 @@
+{
+  "version": "2.0",
+  "profile": "statistical_voxelwise_strict_v1",
+  "task_id": "OPENNEURO-SA-007",
+  "dataset_source": "OpenNeuro",
+  "dataset_id": "ds000255",
+  "checks": [
+    {"id": "task_id_trace", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "task_id"}, "op": "eq_if_present", "right": {"literal": "OPENNEURO-SA-007"}},
+    {"id": "dataset_source_trace", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "dataset_source"}, "op": "eq_if_present", "right": {"literal": "OpenNeuro"}},
+    {"id": "dataset_id_trace", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "dataset_id"}, "op": "eq_if_present", "right": {"literal": "ds000255"}},
+    {"id": "records_count_two", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "records_count"}, "op": "eq_if_present", "right": {"literal": 2}},
+    {"id": "bytes_total_positive", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "bytes_total"}, "op": "ge_if_present", "right": {"literal": 1}},
+    {"id": "input_count_nonnegative", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "input_file_count"}, "op": "ge_if_present", "right": {"literal": 0}},
+    {"id": "subjects_nonnegative", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "processing_subject_count"}, "op": "ge_if_present", "right": {"literal": 0}},
+    {"id": "runs_nonnegative", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "processing_run_count"}, "op": "ge_if_present", "right": {"literal": 0}}
+  ]
+}

@@ -1,0 +1,27 @@
+version = "1.0"
+
+[metadata]
+task_id = "REG-001"
+title = "Perform ANTs SyN nonlinear registration to MNI152 for Haxby anatomicals"
+category = "Registration"
+difficulty = "hard"
+dataset_source = "OpenNeuro"
+dataset_id = "ds000105"
+
+[verifier]
+timeout_sec = 900.0
+
+[agent]
+timeout_sec = 900.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 2
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+
+[verifier.env]
+
+[solution.env]

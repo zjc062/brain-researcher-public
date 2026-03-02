@@ -1,0 +1,32 @@
+{
+  "version": "2.0",
+  "profile": "machine_learning_voxelwise_strict_v1",
+  "task_id": "OPENNEURO-ML-011",
+  "dataset_source": "OpenNeuro",
+  "dataset_id": "ds002424",
+  "checks": [
+    {"id": "task_id_trace", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "task_id"}, "op": "eq_if_present", "right": {"literal": "OPENNEURO-ML-011"}},
+    {"id": "dataset_source_trace", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "dataset_source"}, "op": "eq_if_present", "right": {"literal": "OpenNeuro"}},
+    {"id": "dataset_id_trace", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "dataset_id"}, "op": "eq_if_present", "right": {"literal": "ds002424"}},
+
+    {"id": "status_ok", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "status"}, "op": "eq_if_present", "right": {"literal": "ok"}},
+    {"id": "reason_computed", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "reason"}, "op": "eq_if_present", "right": {"literal": "computed"}},
+
+    {"id": "n_subjects_min", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "n_subjects"}, "op": "ge_if_present", "right": {"literal": 40}},
+    {"id": "n_edge_features_min", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "n_edge_features"}, "op": "ge_if_present", "right": {"literal": 50}},
+    {"id": "n_selected_features_50", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "n_selected_features"}, "op": "eq_if_present", "right": {"literal": 50}},
+    {"id": "mean_auc_min", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "mean_auc"}, "op": "ge_if_present", "right": {"literal": 0.5}},
+    {"id": "mean_auc_max", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "mean_auc"}, "op": "le_if_present", "right": {"literal": 1.0}},
+
+    {"id": "input_files_one", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "input_file_count"}, "op": "eq_if_present", "right": {"literal": 1}},
+    {"id": "input_bytes_positive", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "input_bytes_total"}, "op": "ge_if_present", "right": {"literal": 1}},
+    {"id": "records_count_two", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "records_count"}, "op": "eq_if_present", "right": {"literal": 2}},
+    {"id": "bytes_total_positive", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "bytes_total"}, "op": "ge_if_present", "right": {"literal": 1}},
+
+    {"id": "top_features_dataset", "left": {"source": "output_table_first", "file": "top_features.csv", "column": "dataset_id"}, "op": "eq_if_present", "right": {"literal": "ds002424"}},
+    {"id": "manifest_dataset", "left": {"source": "output_table_first", "file": "input_manifest.csv", "column": "dataset_id"}, "op": "eq_if_present", "right": {"literal": "ds002424"}},
+    {"id": "manifest_file_relpath", "left": {"source": "output_table_first", "file": "input_manifest.csv", "column": "file_relpath"}, "op": "eq_if_present", "right": {"literal": "participants.tsv"}},
+    {"id": "snapshot_match_meta_top", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "snapshot_tag"}, "op": "eq_if_present", "right": {"source": "output_table_first", "file": "top_features.csv", "column": "snapshot_tag"}},
+    {"id": "snapshot_match_meta_manifest", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "snapshot_tag"}, "op": "eq_if_present", "right": {"source": "output_table_first", "file": "input_manifest.csv", "column": "snapshot_tag"}}
+  ]
+}

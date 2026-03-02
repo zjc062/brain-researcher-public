@@ -1,0 +1,63 @@
+{
+  "version": "2.0",
+  "task_id": "CLIN-006",
+  "dataset_source": "Provided",
+  "dataset_id": "simulated_lesion_symptom_data",
+  "profile": "clinical_failfast_strict_v1",
+  "checks": [
+    {
+      "id": "contract_task_id_matches_task_meta",
+      "left": {"source": "input_task_id"},
+      "op": "eq_if_present",
+      "right": {"literal": "CLIN-006"}
+    },
+    {
+      "id": "contract_dataset_source_matches_task_meta",
+      "left": {"source": "input_task_dataset_source"},
+      "op": "eq_if_present",
+      "right": {"literal": "Provided"}
+    },
+    {
+      "id": "contract_dataset_id_matches_task_meta",
+      "left": {"source": "input_task_dataset_id"},
+      "op": "eq_if_present",
+      "right": {"literal": "simulated_lesion_symptom_data"}
+    },
+    {
+      "id": "runmeta_task_id_traceability",
+      "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "task_id"},
+      "op": "eq_if_present",
+      "right": {"source": "input_task_id"}
+    },
+    {
+      "id": "runmeta_dataset_source_traceability",
+      "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "dataset_source"},
+      "op": "eq_if_present",
+      "right": {"source": "input_task_dataset_source"}
+    },
+    {
+      "id": "runmeta_dataset_id_traceability",
+      "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "dataset_id"},
+      "op": "eq_if_present",
+      "right": {"source": "input_task_dataset_id"}
+    },
+    {
+      "id": "runmeta_subjects_nonnegative",
+      "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "n_subjects_used"},
+      "op": "ge_if_present",
+      "right": {"literal": 0}
+    },
+    {
+      "id": "runmeta_voxels_nonnegative",
+      "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "n_voxels_tested"},
+      "op": "ge_if_present",
+      "right": {"literal": 0}
+    },
+    {
+      "id": "runmeta_rows_nonnegative",
+      "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "n_rows_reported"},
+      "op": "ge_if_present",
+      "right": {"literal": 1}
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "version": "2.0",
+  "profile": "quality_control_voxelwise_strict_v1",
+  "task_id": "OPENNEURO-QC-003",
+  "dataset_source": "OpenNeuro",
+  "dataset_id": "ds002424",
+  "checks": [
+    {"id": "task_id_trace", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "task_id"}, "op": "eq_if_present", "right": {"literal": "OPENNEURO-QC-003"}},
+    {"id": "dataset_source_trace", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "dataset_source"}, "op": "eq_if_present", "right": {"literal": "OpenNeuro"}},
+    {"id": "dataset_id_trace", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "dataset_id"}, "op": "eq_if_present", "right": {"literal": "ds002424"}},
+    {"id": "method_trace", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "method"}, "op": "eq_if_present", "right": {"literal": "real_t1w_intensity_qc"}},
+
+    {"id": "status_matches_csv", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "status"}, "op": "eq_if_present", "right": {"source": "output_table_first", "file": "anatomical_qc.csv", "column": "status"}},
+    {"id": "reason_matches_csv", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "reason"}, "op": "eq_if_present", "right": {"source": "output_table_first", "file": "anatomical_qc.csv", "column": "reason"}},
+
+    {"id": "status_ok_reason", "when": {"left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "status"}, "op": "eq", "right": {"literal": "ok"}}, "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "reason"}, "op": "eq_if_present", "right": {"literal": "computed"}},
+    {"id": "status_failed_reason", "when": {"left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "status"}, "op": "eq", "right": {"literal": "failed_precondition"}}, "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "reason"}, "op": "contains_if_present", "right": {"literal": "no_usable"}},
+
+    {"id": "processing_subject_nonnegative", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "processing_subject_count"}, "op": "ge_if_present", "right": {"literal": 0}},
+    {"id": "processing_run_nonnegative", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "processing_run_count"}, "op": "ge_if_present", "right": {"literal": 0}},
+    {"id": "input_count_nonnegative", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "input_file_count"}, "op": "ge_if_present", "right": {"literal": 0}},
+    {"id": "input_bytes_nonnegative", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "input_bytes_total"}, "op": "ge_if_present", "right": {"literal": 0}},
+    {"id": "records_count_three", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "records_count"}, "op": "eq_if_present", "right": {"literal": 3}},
+    {"id": "bytes_total_positive", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "bytes_total"}, "op": "ge_if_present", "right": {"literal": 1}},
+
+    {"id": "csv_dataset_id", "left": {"source": "output_table_first", "file": "anatomical_qc.csv", "column": "dataset_id"}, "op": "eq_if_present", "right": {"literal": "ds002424"}},
+    {"id": "csv_method", "left": {"source": "output_table_first", "file": "anatomical_qc.csv", "column": "method"}, "op": "eq_if_present", "right": {"literal": "real_t1w_intensity_qc"}},
+    {"id": "csv_snapshot_match", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "snapshot_tag"}, "op": "eq_if_present", "right": {"source": "output_table_first", "file": "anatomical_qc.csv", "column": "snapshot_tag"}}
+  ]
+}

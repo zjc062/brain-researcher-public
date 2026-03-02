@@ -1,0 +1,41 @@
+{
+  "version": "2.0",
+  "profile": "machine_learning_voxelwise_strict_v1",
+  "task_id": "OPENNEURO-ML-005",
+  "dataset_source": "OpenNeuro",
+  "dataset_id": "ds000105",
+  "checks": [
+    {"id": "task_id_trace", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "task_id"}, "op": "eq_if_present", "right": {"literal": "OPENNEURO-ML-005"}},
+    {"id": "dataset_source_trace", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "dataset_source"}, "op": "eq_if_present", "right": {"literal": "OpenNeuro"}},
+    {"id": "dataset_id_trace", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "dataset_id"}, "op": "eq_if_present", "right": {"literal": "ds000105"}},
+
+    {"id": "status_ok", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "status"}, "op": "eq_if_present", "right": {"literal": "ok"}},
+    {"id": "reason_computed", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "reason"}, "op": "eq_if_present", "right": {"literal": "computed"}},
+    {"id": "method_trace", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "method"}, "op": "eq_if_present", "right": {"literal": "real_bold_events_decoding_proxy"}},
+
+    {"id": "processing_subject_one", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "processing_subject_count"}, "op": "eq_if_present", "right": {"literal": 1}},
+    {"id": "processing_run_one", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "processing_run_count"}, "op": "eq_if_present", "right": {"literal": 1}},
+    {"id": "input_files_two", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "input_file_count"}, "op": "eq_if_present", "right": {"literal": 2}},
+    {"id": "input_bytes_positive", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "input_bytes_total"}, "op": "ge_if_present", "right": {"literal": 1}},
+    {"id": "records_count_three", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "records_count"}, "op": "eq_if_present", "right": {"literal": 3}},
+    {"id": "bytes_total_positive", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "bytes_total"}, "op": "ge_if_present", "right": {"literal": 1}},
+
+    {"id": "n_categories_eight", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "n_categories"}, "op": "eq_if_present", "right": {"literal": 8}},
+    {"id": "n_trials_min", "left": {"source": "output_json_field_int_optional", "file": "run_metadata.json", "field": "n_trials"}, "op": "ge_if_present", "right": {"literal": 16}},
+    {"id": "chance_level_lower", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "chance_level"}, "op": "ge_if_present", "right": {"literal": 0.12}},
+    {"id": "chance_level_upper", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "chance_level"}, "op": "le_if_present", "right": {"literal": 0.13}},
+    {"id": "mean_accuracy_range_low", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "mean_accuracy"}, "op": "ge_if_present", "right": {"literal": 0.125}},
+    {"id": "mean_accuracy_range_high", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "mean_accuracy"}, "op": "le_if_present", "right": {"literal": 1.0}},
+
+    {"id": "results_status_ok", "left": {"source": "output_json_field_optional", "file": "results.json", "field": "status"}, "op": "eq_if_present", "right": {"literal": "ok"}},
+    {"id": "results_reason_computed", "left": {"source": "output_json_field_optional", "file": "results.json", "field": "reason"}, "op": "eq_if_present", "right": {"literal": "computed"}},
+    {"id": "results_dataset_id", "left": {"source": "output_json_field_optional", "file": "results.json", "field": "dataset_id"}, "op": "eq_if_present", "right": {"literal": "ds000105"}},
+
+    {"id": "runmeta_results_snapshot_match", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "snapshot_tag"}, "op": "eq_if_present", "right": {"source": "output_json_field_optional", "file": "results.json", "field": "snapshot_tag"}},
+    {"id": "runmeta_results_subject_match", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "subject_id"}, "op": "eq_if_present", "right": {"source": "output_json_field_optional", "file": "results.json", "field": "subject_id"}},
+    {"id": "runmeta_results_run_match", "left": {"source": "output_json_field_optional", "file": "run_metadata.json", "field": "run"}, "op": "eq_if_present", "right": {"source": "output_json_field_optional", "file": "results.json", "field": "run"}},
+
+    {"id": "manifest_dataset_id", "left": {"source": "output_table_first", "file": "input_manifest.csv", "column": "dataset_id"}, "op": "eq_if_present", "right": {"literal": "ds000105"}},
+    {"id": "manifest_nonempty_hash", "left": {"source": "output_table_first", "file": "input_manifest.csv", "column": "bold_sha256"}, "op": "ne_if_present", "right": {"literal": ""}}
+  ]
+}

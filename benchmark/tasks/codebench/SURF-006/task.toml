@@ -1,0 +1,27 @@
+version = "1.0"
+
+[metadata]
+task_id = "SURF-006"
+title = "Compute curvature, sulcal depth, and surface area for morphometry analysis"
+category = "Surface Analysis"
+difficulty = "medium"
+dataset_source = "Provided"
+dataset_id = "freesurfer_surfaces"
+
+[verifier]
+timeout_sec = 900.0
+
+[agent]
+timeout_sec = 900.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 2
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = false
+
+[verifier.env]
+
+[solution.env]

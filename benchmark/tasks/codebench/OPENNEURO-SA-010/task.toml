@@ -1,0 +1,27 @@
+version = "1.0"
+
+[metadata]
+task_id = "OPENNEURO-SA-010"
+title = "OpenfMRI ds000030 Lifespan Quadratic Age Modeling"
+category = "Statistical Analysis"
+difficulty = "medium"
+dataset_source = "OpenNeuro"
+dataset_id = "ds000030"
+
+[verifier]
+timeout_sec = 1800.0
+
+[agent]
+timeout_sec = 1800.0
+
+[environment]
+build_timeout_sec = 1800.0
+cpus = 4
+memory_mb = 12288
+storage_mb = 51200
+gpus = 0
+allow_internet = true
+
+[verifier.env]
+
+[solution.env]

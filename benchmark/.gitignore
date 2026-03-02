@@ -1,0 +1,8 @@
+# Cache and runtime artifacts
+**/__pycache__/
+**/.pytest_cache/
+**/.cache/
+**/*.pyc
+
+# Local run outputs
+jobs/

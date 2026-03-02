@@ -1,0 +1,148 @@
+{
+  "version": "1.0",
+  "task_id": "SEG-005",
+  "dataset_source": "Provided",
+  "dataset_id": "synthetic_stroke_data",
+  "checks": [
+    {
+      "id": "contract_task_id_matches_task_meta",
+      "left": {
+        "source": "input_task_id"
+      },
+      "op": "eq",
+      "right": {
+        "literal": "SEG-005"
+      }
+    },
+    {
+      "id": "contract_dataset_source_matches_task_meta",
+      "left": {
+        "source": "input_task_dataset_source"
+      },
+      "op": "eq",
+      "right": {
+        "literal": "Provided"
+      }
+    },
+    {
+      "id": "contract_dataset_id_matches_task_meta",
+      "left": {
+        "source": "input_task_dataset_id"
+      },
+      "op": "eq",
+      "right": {
+        "literal": "synthetic_stroke_data"
+      }
+    },
+    {
+      "id": "runmeta_task_id_traceability",
+      "left": {
+        "source": "output_json_field_optional",
+        "file": "run_metadata.json",
+        "field": "task_id"
+      },
+      "op": "eq_if_present",
+      "right": {
+        "source": "input_task_id"
+      }
+    },
+    {
+      "id": "runmeta_dataset_source_traceability",
+      "left": {
+        "source": "output_json_field_optional",
+        "file": "run_metadata.json",
+        "field": "dataset_source"
+      },
+      "op": "eq_if_present",
+      "right": {
+        "source": "input_task_dataset_source"
+      }
+    },
+    {
+      "id": "runmeta_dataset_id_traceability",
+      "left": {
+        "source": "output_json_field_optional",
+        "file": "run_metadata.json",
+        "field": "dataset_id"
+      },
+      "op": "eq_if_present",
+      "right": {
+        "source": "input_task_dataset_id"
+      }
+    },
+    {
+      "id": "runmeta_status_present",
+      "left": {
+        "source": "output_json_field_optional",
+        "file": "run_metadata.json",
+        "field": "status"
+      },
+      "op": "ne_if_present",
+      "right": {
+        "literal": ""
+      }
+    },
+    {
+      "id": "runmeta_n_input_files_nonnegative",
+      "left": {
+        "source": "output_json_field_int_optional",
+        "file": "run_metadata.json",
+        "field": "n_input_files"
+      },
+      "op": "ge_if_present",
+      "right": {
+        "literal": 0
+      }
+    },
+    {
+      "id": "runmeta_n_subjects_nonnegative",
+      "left": {
+        "source": "output_json_field_int_optional",
+        "file": "run_metadata.json",
+        "field": "n_subjects"
+      },
+      "op": "ge_if_present",
+      "right": {
+        "literal": 0
+      }
+    },
+    {
+      "id": "runmeta_bytes_nonnegative",
+      "left": {
+        "source": "output_json_field_int_optional",
+        "file": "run_metadata.json",
+        "field": "bytes_total"
+      },
+      "op": "ge_if_present",
+      "right": {
+        "literal": 0
+      }
+    },
+    {
+      "id": "runmeta_records_count_nonnegative",
+      "left": {
+        "source": "output_json_field_int_optional",
+        "file": "run_metadata.json",
+        "field": "records_count"
+      },
+      "op": "ge_if_present",
+      "right": {
+        "literal": 0
+      }
+    },
+    {
+      "id": "manifest_dataset_id_matches_task_dataset_id",
+      "left": {
+        "source": "output_table_unique_sorted",
+        "file": "input_manifest.csv",
+        "column": "dataset_id"
+      },
+      "op": "eq_if_present",
+      "right": {
+        "literal": [
+          "synthetic_stroke_data"
+        ]
+      }
+    }
+  ]
+}

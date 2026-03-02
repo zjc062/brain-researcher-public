@@ -1,0 +1,81 @@
+{
+  "version": "2.0",
+  "profile": "preprocessing_strict_v1",
+  "task_id": "PREP-004",
+  "dataset_source": "OpenNeuro",
+  "dataset_id": "ds003592",
+  "checks": [
+    {
+      "id": "task_id_trace",
+      "left": {
+        "source": "output_json_field_optional",
+        "file": "run_metadata.json",
+        "field": "task_id"
+      },
+      "op": "eq_if_present",
+      "right": {
+        "literal": "PREP-004"
+      }
+    },
+    {
+      "id": "dataset_source_trace",
+      "left": {
+        "source": "output_json_field_optional",
+        "file": "run_metadata.json",
+        "field": "dataset_source"
+      },
+      "op": "eq_if_present",
+      "right": {
+        "literal": "OpenNeuro"
+      }
+    },
+    {
+      "id": "dataset_id_trace",
+      "left": {
+        "source": "output_json_field_optional",
+        "file": "run_metadata.json",
+        "field": "dataset_id"
+      },
+      "op": "eq_if_present",
+      "right": {
+        "literal": "ds003592"
+      }
+    },
+    {
+      "id": "status_ok",
+      "left": {
+        "source": "output_json_field_optional",
+        "file": "run_metadata.json",
+        "field": "status"
+      },
+      "op": "eq_if_present",
+      "right": {
+        "literal": "ok"
+      }
+    },
+    {
+      "id": "records_count_two",
+      "left": {
+        "source": "output_json_field_int_optional",
+        "file": "run_metadata.json",
+        "field": "records_count"
+      },
+      "op": "eq_if_present",
+      "right": {
+        "literal": 2
+      }
+    },
+    {
+      "id": "bytes_total_positive",
+      "left": {
+        "source": "output_json_field_int_optional",
+        "file": "run_metadata.json",
+        "field": "bytes_total"
+      },
+      "op": "ge_if_present",
+      "right": {
+        "literal": 1
+      }
+    }
+  ]
+}

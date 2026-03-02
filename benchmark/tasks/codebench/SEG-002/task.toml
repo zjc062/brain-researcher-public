@@ -1,0 +1,27 @@
+version = "1.0"
+
+[metadata]
+task_id = "SEG-002"
+title = "Segment gray matter, white matter, and CSF from ADHD-200 T1w images"
+category = "Segmentation"
+difficulty = "medium"
+dataset_source = "OpenNeuro"
+dataset_id = "ds002424"
+
+[verifier]
+timeout_sec = 900.0
+
+[agent]
+timeout_sec = 900.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 2
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = true
+
+[verifier.env]
+
+[solution.env]

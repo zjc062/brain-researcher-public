@@ -1,0 +1,27 @@
+version = "1.0"
+
+[metadata]
+task_id = "CLIN-014"
+title = "Identify treatment responders from baseline brain features"
+category = "Clinical Prediction"
+difficulty = "medium"
+dataset_source = "Provided"
+dataset_id = "simulated_treatment_dataset"
+
+[verifier]
+timeout_sec = 900.0
+
+[agent]
+timeout_sec = 900.0
+
+[environment]
+build_timeout_sec = 900.0
+cpus = 2
+memory_mb = 4096
+storage_mb = 10240
+gpus = 0
+allow_internet = false
+
+[verifier.env]
+
+[solution.env]
