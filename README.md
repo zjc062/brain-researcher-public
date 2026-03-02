@@ -38,11 +38,16 @@ We want neuroimaging analysis to be:
 
 We are in a hardening phase and need reviewer feedback across methods, UX, KG quality, and MCP reliability.
 
+## Contribution Lanes
+
+1. Product and scientific review lane: use [REVIEW_PLAYBOOK.md](REVIEW_PLAYBOOK.md) and submit via issue forms.
+2. Benchmark task authoring lane: use [benchmark/CONTRIBUTING_TASKS.md](benchmark/CONTRIBUTING_TASKS.md) for `benchmark/tasks/codebench/**` changes.
+
 ## 5-Minute Contributor Quickstart
 
 1. Open [brain-researcher.com](https://brain-researcher.com).
 2. Pick one review track from the table below.
-3. Follow the click path in [CONTRIBUTING.md](CONTRIBUTING.md).
+3. Follow the click path in [REVIEW_PLAYBOOK.md](REVIEW_PLAYBOOK.md) (or [CONTRIBUTING.md](CONTRIBUTING.md)).
 4. Submit one issue using the linked form.
 5. Include IDs, expected vs actual behavior, and a concrete fix suggestion.
 
@@ -80,5 +85,7 @@ If credits block execution tests, you can top up in `Settings` at `https://brain
 ## Contributing and Governance
 
 - Full contributor playbook: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Reviewer onboarding: [REVIEW_PLAYBOOK.md](REVIEW_PLAYBOOK.md)
+- Benchmark task authoring: [benchmark/CONTRIBUTING_TASKS.md](benchmark/CONTRIBUTING_TASKS.md)
 - Code of Conduct: [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md)
 - License: [LICENSE](LICENSE)

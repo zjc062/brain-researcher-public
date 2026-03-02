@@ -2,6 +2,12 @@
 
 This guide is designed for external reviewers to contribute with minimal setup and zero guesswork.
 
+## Start Here
+
+1. Product review contributions (Studio, MCP, NeuroKG, Hypothesis, datasets): use `REVIEW_PLAYBOOK.md`.
+2. Benchmark task authoring contributions (`benchmark/tasks/codebench/**`): use `benchmark/CONTRIBUTING_TASKS.md`.
+3. If unsure, use this document as taxonomy and policy reference, then follow the playbook above.
+
 ## Universal Rules
 
 1. Use read-only review behavior by default.

@@ -28,3 +28,7 @@ Phase A includes:
 
 1. This phase copies task source files and excludes cache artifacts.
 2. Terminal-Bench strict normalization (for example canary insertion and metadata harmonization) is intentionally deferred to a later pass.
+
+## Contribute Benchmark Tasks
+
+Use `benchmark/CONTRIBUTING_TASKS.md` for task authoring rules, validation commands, and PR checklist requirements for benchmark changes.
