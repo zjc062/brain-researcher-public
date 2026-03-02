@@ -63,22 +63,21 @@ Option A: local stdio server
 codex mcp add brain-researcher -- brain-researcher-mcp
 ```
 
-Option B: edit `~/.codex/mcp.json` and add:
+Option B: production HTTP MCP server
 
-```json
-{
-  "mcpServers": {
-    "brain-researcher-http": {
-      "type": "http",
-      "url": "<MCP_ENDPOINT>",
-      "headers": {
-        "Authorization": "Bearer ${BR_MCP_TOKEN}",
-        "Accept": "application/json, text/event-stream"
-      }
-    }
-  }
-}
+```bash
+codex mcp add brain-researcher-prod \
+  --url "https://brain-researcher.com/mcp" \
+  --bearer-token-env-var BR_MCP_TOKEN
 ```
+
+Check:
+
+```bash
+codex mcp list --json
+```
+
+Note: current Codex stores MCP servers in `~/.codex/config.toml`.
 
 ### Cursor
 
@@ -115,7 +114,7 @@ claude mcp add-json brain-researcher-http "{
 
 3. Reload MCP connectors in your client.
 4. Smoke test prompt:
-`use brain-researcher-http MCP to search tools for resting-state connectivity`.
+`Use brain-researcher-prod MCP and call server_info.`
 
 ## 5-Minute Contributor Quickstart
 
