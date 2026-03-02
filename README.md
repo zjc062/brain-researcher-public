@@ -19,6 +19,21 @@ Instead of relying on free-form code generation, Brain Researcher uses schema-co
 2. Schema-constrained workflow planning: selects from validated tools and checks input/output compatibility before execution.
 3. Execution via MCP bridge: exposes the same backend in Codex/Cursor/Claude Code through contract-aware tool invocation.
 
+## Terminology (Quick)
+
+- `Tool`: one executable operation (for example `run_fmriprep`).
+- `Workflow`: an ordered node chain of tools shown in `Library`.
+- `Implementation`: the backend code path behind a tool name (wrappers and implementations may differ).
+- `MCP tool`: a tool exposed through MCP for IDE agents.
+
+## Issue Routing (Tool vs Workflow)
+
+Use this rule when filing:
+
+1. Tool behavior, parameters, schema, execution, or duplicate tool names -> file a `tool` issue.
+2. Node order, default parameters, or compatibility inside Library pipelines -> file a `workflow` issue.
+3. Not sure -> file as `tool` issue first; maintainers will relabel.
+
 ## Architecture At A Glance
 
 ### Web UI
@@ -47,16 +62,16 @@ Instead of relying on free-form code generation, Brain Researcher uses schema-co
 
 ## Where Reviewers Get Context
 
-1. Start with [REVIEW_PLAYBOOK.md](REVIEW_PLAYBOOK.md) for click-by-click review steps and reporting format.
+1. Start with [REVIEW_PLAYBOOK.md](REVIEW_PLAYBOOK.md) for click-by-click review steps (source of truth for review procedures).
 2. Use the `Review Tracks` table below to choose one lane and open the matching issue form.
 3. Use the `Suggested priority entry points` under `Review Tracks` to start with high-impact lanes.
-4. Use [CONTRIBUTING.md](CONTRIBUTING.md) for policy, labels, and reporting standards.
+4. Use [CONTRIBUTING.md](CONTRIBUTING.md) for policy/labels/governance rules (not step-by-step UI procedures).
 5. For benchmark authoring specifics, use [benchmark/CONTRIBUTING_TASKS.md](benchmark/CONTRIBUTING_TASKS.md).
 
 ## Contributor Quickstart
 
 1. Open [brain-researcher.com](https://brain-researcher.com).
-2. Pick one review track from the table below (or start with `02-workflow-review`, `07-studio-blocked`, or `06-mcp-integration`).
+2. Start with `07-studio-blocked` (recommended first task), then pick another track from the table below.
 3. Follow the exact click path in [REVIEW_PLAYBOOK.md](REVIEW_PLAYBOOK.md).
 4. File one issue with exact IDs, expected vs actual behavior, and a concrete fix suggestion.
 

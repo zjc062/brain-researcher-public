@@ -23,6 +23,14 @@ Use this document for:
 
 For benchmark task authoring details, use `benchmark/CONTRIBUTING_TASKS.md`.
 
+## Tool vs Workflow (Issue Routing)
+
+Use this decision rule before opening an issue:
+
+1. Tool behavior, schema, parameters, execution failure, duplicate tool names -> open a `tool` issue.
+2. Node order/default parameters/compatibility inside Library pipelines -> open a `workflow` issue.
+3. Not sure -> open a `tool` issue first; maintainers relabel.
+
 ## Universal Reporting Format
 
 Use this order in every report:
@@ -42,6 +50,25 @@ Use this order in every report:
 2. Do not click `Save governance` on Benchmark unless authorized.
 3. Do not submit PHI, secrets, or private credentials.
 4. Keep reports specific and ID-based.
+
+## Good Issue Example
+
+Use this pattern:
+
+- Title: `Studio Validation: Data validated passes when dataset is not accessible`
+- Entry surface: `Studio -> Plan -> Verify`
+- IDs: `dataset=<id>`, `workflow=<name>`
+- Expected: `Data validated` should stay blocked until dataset access is ready.
+- Actual: `Data validated` shows passed, but run fails due to missing mount/readiness.
+- Suggested fix: include dataset readiness signal in verify check and error copy.
+
+## Known Duplicate/Alias Cases
+
+When you see multiple tool names for similar functionality, report as a `tool` issue.
+
+| Observed names | What it means | File as |
+| --- | --- | --- |
+| `run_fmriprep` and `fmriprep_preprocessing` | Different exposed implementations/wrappers for fMRIPrep paths | Tool issue (`area/tool`) |
 
 ## Review Tracks
 
@@ -215,8 +242,11 @@ Use this order in every report:
 
 ## Where To Start
 
-If you are new, pick one of these first:
+If you are new, start with:
+
+1. Studio blocked review (`07-studio-blocked.yml`)
+
+Then continue with:
 
 1. Workflow review (`02-workflow-review.yml`)
-2. Studio blocked review (`07-studio-blocked.yml`)
-3. MCP integration review (`06-mcp-integration.yml`)
+2. MCP integration review (`06-mcp-integration.yml`)

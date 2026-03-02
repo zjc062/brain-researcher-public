@@ -31,6 +31,15 @@ Current phase: hardening (quality, reliability, and scientific rigor improvement
 2. Benchmark task authoring (`benchmark/tasks/codebench/**`): use `benchmark/CONTRIBUTING_TASKS.md`.
 3. If unsure: follow `REVIEW_PLAYBOOK.md`, submit one issue, and include IDs plus expected vs actual behavior.
 
+## Document Ownership (Avoid Confusion)
+
+Use each document for one purpose:
+
+1. `README.md`: project overview, where to start, and links.
+2. `REVIEW_PLAYBOOK.md`: click-by-click review procedures and issue routing (`tool` vs `workflow`).
+3. `CONTRIBUTING.md` (this file): policy, labels, governance, and report quality standards.
+4. `benchmark/CONTRIBUTING_TASKS.md`: benchmark task authoring and benchmark-specific rules.
+
 ## Universal Rules
 
 1. Use read-only review behavior by default.
